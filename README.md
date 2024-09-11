@@ -1,6 +1,6 @@
-# howmuchis13billioneuros.com
+# HowMuchIs13BillionEuros.com
 
-[How much is 13 billion euros?](https://howmuchis13billioneuros.com)
+[How much is 13 billion euros?](https://HowMuchIs13BillionEuros.com)
 
 This is a [Framework](https://observablehq.com/framework/) website: I like it's reactivity and Markdown for building applications, and I plan to use this format for a new gallery.
 
