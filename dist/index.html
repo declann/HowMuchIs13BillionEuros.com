@@ -87,7 +87,7 @@
 import {define} from "./_observablehq/client.40bd02be.js";
 import {registerFile} from "./_observablehq/stdlib.10504731.js";
 
-registerFile("./cul/how-much.cul.js", {"name":"./cul/how-much.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much.cul.dadb0e7a.js","lastModified":1726078279137,"size":3844});
+registerFile("./cul/how-much.cul.js", {"name":"./cul/how-much.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much.cul.8b8312eb.js","lastModified":1726078778345,"size":3561});
 
 define({id: "79154911", inputs: ["compilations"], outputs: ["getIntrospection","compile_new","bundleIntoOne","packageCalculang_new","calls_fromDefinition","compiled","esm"], body: async (compilations) => {
 const {introspection: getIntrospection, compile_new, bundleIntoOne, packageCalculang_new, calls_fromDefinition} = await import("https://cdn.jsdelivr.net/gh/calculang/calculang@dev/packages/standalone/index.js");
@@ -577,7 +577,7 @@ const formulae_not_inputs = [...introspection.cul_functions.values()].filter(d =
 return {inputs,formulae,formulae_not_inputs};
 }});
 
-define({id: "61a97232", inputs: ["fns_annotations","d3"], outputs: ["fmt"], body: (fns_annotations,d3) => {
+define({id: "cbf14380", inputs: ["fns_annotations","d3"], outputs: ["fmt"], body: (fns_annotations,d3) => {
 /*document.querySelectorAll('.tablet_cost').forEach(d => {
   d.textContent = model.tablet_cost({}) + Math.random()
   })*/
@@ -600,7 +600,7 @@ function fmt(formula, v) {
   if (formula == 'tablets_per_primary_pupil') return d3.format(',.1f')(v);
   if (formula == 'one_off_gift_cost') return '€ ' + d3.format(',.0f')(v);
   if (formula == 'one_off_gifts_per_person') return d3.format(',.1f')(v);
-  if (formula == 'oasis_tickets_cost') return '€ ' + d3.format(',.2f')(v);
+  if (formula == 'oasis_tickets_cost') return '€ ' + d3.format(',.0f')(v);
 
   if (formula == 'oasis_tickets_per_person') return d3.format(',.1f')(v);
   if (formula == 'oasis_gigs') return d3.format(',.0f')(v)
@@ -626,7 +626,7 @@ function fmt(formula, v) {
   if (formula == 'national_debt') return '€ ' + v/1_000_000_000 + 'Bn';
   if (formula == 'amount_over_national_debt') return d3.format('.1%')(v);
 
-  if (formula == 'bike_shed_bikes') return d3.format(',.1f')(v);
+  if (formula == 'bike_shed_bikes') return d3.format(',.0f')(v);
   if (formula == 'bikes_per_bike_shed') return d3.format(',.0f')(v);
 
 
@@ -867,7 +867,7 @@ background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
 <div class="box-2" id="aa">
 <div class="observablehq observablehq--block"><!--:9bf51115:--></div>
 <div style="padding:10px; background: aliceblue; border: 1px solid black; border-radius: 20px; margin: 10px; max-width: unset" id="main">
-<div class="observablehq observablehq--block"><!--:61a97232:--></div>
+<div class="observablehq observablehq--block"><!--:cbf14380:--></div>
 <style>
 @keyframes fadeIn {
   0% { opacity: 0.5;background: aqua; }

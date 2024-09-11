@@ -39,7 +39,7 @@ function fmt(formula, v) {
   if (formula == 'tablets_per_primary_pupil') return d3.format(',.1f')(v);
   if (formula == 'one_off_gift_cost') return '€ ' + d3.format(',.0f')(v);
   if (formula == 'one_off_gifts_per_person') return d3.format(',.1f')(v);
-  if (formula == 'oasis_tickets_cost') return '€ ' + d3.format(',.2f')(v);
+  if (formula == 'oasis_tickets_cost') return '€ ' + d3.format(',.0f')(v);
 
   if (formula == 'oasis_tickets_per_person') return d3.format(',.1f')(v);
   if (formula == 'oasis_gigs') return d3.format(',.0f')(v)
@@ -65,7 +65,7 @@ function fmt(formula, v) {
   if (formula == 'national_debt') return '€ ' + v/1_000_000_000 + 'Bn';
   if (formula == 'amount_over_national_debt') return d3.format('.1%')(v);
 
-  if (formula == 'bike_shed_bikes') return d3.format(',.1f')(v);
+  if (formula == 'bike_shed_bikes') return d3.format(',.0f')(v);
   if (formula == 'bikes_per_bike_shed') return d3.format(',.0f')(v);
 
 

@@ -26,7 +26,6 @@ export const population = () => 5_149_139; // https://www.cso.ie/en/releasesandp
 // assumptions: amounts
 export const croke_park_capacity = () => 82_300; // https://crokepark.ie/stadium/about
 export const national_debt = () => 201_970_000_000 // https://www.ntma.ie/uploads/general/Composition-of-Debt-Aug-2024-excel-download.xlsx
-export const tax_revenue_2023 = () => 88_100_000_000 // https://www.gov.ie/en/press-release/cb77b-exchequer-surplus-of-12-billion-in-2023-tax-revenue-in-line-with-expectations-ministers-mcgrath-donohoe/
 export const total_expenditure_2023 = () =>  102_500_000_000 // https://whereyourmoneygoes.gov.ie/en/2023/
 export const house_occupants = () => 2.74; // CSO "In 2022, there were on average 2.74 people per private household" https://www.cso.ie/en/releasesandpublications/ep/p-cpsr/censusofpopulation2022-summaryresults/householdsizeandmaritalstatus/
 export const bikes_per_bike_shed = () => 18;
@@ -52,5 +51,4 @@ export const house_pc = () => houses() * house_occupants() / population()
 // proportions:
 
 export const amount_over_national_debt = () => amount() / national_debt()
-export const amount_over_tax_revenue_2023 = () => amount() / tax_revenue_2023()
 export const amount_over_total_expenditure_2023 = () => amount() / total_expenditure_2023()
