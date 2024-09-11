@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.11.0">
+<title>How much is 13 billion? | How much is 13 billion</title>
+<link rel="preload" as="style" href="./_import/layout-styles.8f813532.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="./_import/layout-styles.8f813532.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.40bd02be.js">
+<link rel="modulepreload" href="./_observablehq/runtime.62b61640.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.10504731.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/calculang/calculang@dev/packages/standalone/index.js">
+<link rel="modulepreload" href="./_npm/source-map-js@1.2.1/d84cc5a3.js">
+<link rel="modulepreload" href="./_import/components/editor.7df37247.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/declann/calculang-js-browser-dev@main/helpers.js">
+<link rel="modulepreload" href="./_import/components/calcuvegadata.f46095cf.js">
+<link rel="modulepreload" href="./_import/components/snippetarray.24a7d79f.js">
+<link rel="modulepreload" href="./_node/@codemirror/merge@6.6.3/index.b871f7e4.js">
+<link rel="modulepreload" href="./_node/codemirror@6.0.1/index.0fd7eda9.js">
+<link rel="modulepreload" href="./_node/@codemirror/view@6.33.0/index.836a6482.js">
+<link rel="modulepreload" href="./_node/@codemirror/state@6.4.1/index.66d24d9c.js">
+<link rel="modulepreload" href="./_node/@codemirror/lint@6.8.1/index.ee129630.js">
+<link rel="modulepreload" href="./_node/eslint-linter-browserify@9.10.0/index.9c03d13d.js">
+<link rel="modulepreload" href="./_node/@codemirror/lang-javascript@6.2.2/index.fe693d67.js">
+<link rel="modulepreload" href="./_node/@codemirror/language@6.10.2/index.372ccf5f.js">
+<link rel="modulepreload" href="./_node/globals@15.9.0/index.d82c0643.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/declann/calculang-js-browser-dev@55c8ed1/calculang.js">
+<link rel="modulepreload" href="./_node/@viz-js/viz@3.9.0/index.20a70c76.js">
+<link rel="modulepreload" href="./_node/htl@0.3.1/index.0caf36e7.js">
+<link rel="modulepreload" href="./_node/codemirror-6-snippetbuilder@1.0.1/index.200343b8.js">
+<link rel="modulepreload" href="./_node/@observablehq/inspector@5.0.1/index.01e7abcd.js">
+<link rel="modulepreload" href="./_node/underscore@1.13.7/index.78a0bd44.js">
+<link rel="modulepreload" href="./_npm/object-traversal@1.0.1/9530e55f.js">
+<link rel="modulepreload" href="./_npm/underscore@1.13.7/2be59dd5.js">
+<link rel="modulepreload" href="./_npm/d3@7.9.0/7055d4c5.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/063eb405.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.470d1590.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/c68fbd73.js">
+<link rel="modulepreload" href="./_node/style-mod@4.1.2/index.988d93ad.js">
+<link rel="modulepreload" href="./_node/@lezer/highlight@1.2.1/index.2f4ba012.js">
+<link rel="modulepreload" href="./_node/@codemirror/commands@6.6.1/index.9952cd07.js">
+<link rel="modulepreload" href="./_node/@codemirror/search@6.5.6/index.ad377401.js">
+<link rel="modulepreload" href="./_node/@codemirror/autocomplete@6.18.0/index.0467ca2b.js">
+<link rel="modulepreload" href="./_node/w3c-keyname@2.2.8/index.91f4ec3f.js">
+<link rel="modulepreload" href="./_node/crelt@1.0.6/index.8ff6b95c.js">
+<link rel="modulepreload" href="./_node/@lezer/javascript@1.4.17/index.a8beda5d.js">
+<link rel="modulepreload" href="./_node/@lezer/common@1.2.1/index.ec92ec4c.js">
+<link rel="modulepreload" href="./_node/isoformat@0.2.1/index.0882e9d9.js">
+<link rel="modulepreload" href="./_npm/d3-array@3.2.4/e95f898e.js">
+<link rel="modulepreload" href="./_npm/d3-axis@3.0.0/d44feff9.js">
+<link rel="modulepreload" href="./_npm/d3-brush@3.0.0/5830b12a.js">
+<link rel="modulepreload" href="./_npm/d3-chord@3.0.1/84d7b8e9.js">
+<link rel="modulepreload" href="./_npm/d3-color@3.1.0/2c0cdfa2.js">
+<link rel="modulepreload" href="./_npm/d3-contour@4.0.2/626bedc4.js">
+<link rel="modulepreload" href="./_npm/d3-delaunay@6.0.4/00c41b5d.js">
+<link rel="modulepreload" href="./_npm/d3-dispatch@3.0.1/b5f7cdc6.js">
+<link rel="modulepreload" href="./_npm/d3-drag@3.0.0/b22c5864.js">
+<link rel="modulepreload" href="./_npm/d3-dsv@3.0.1/407f7a1f.js">
+<link rel="modulepreload" href="./_npm/d3-ease@3.0.1/6f15f633.js">
+<link rel="modulepreload" href="./_npm/d3-fetch@3.0.1/ef1ec490.js">
+<link rel="modulepreload" href="./_npm/d3-force@3.0.0/5e1ff060.js">
+<link rel="modulepreload" href="./_npm/d3-format@3.1.0/5851d7ef.js">
+<link rel="modulepreload" href="./_npm/d3-geo@3.1.1/dcd02767.js">
+<link rel="modulepreload" href="./_npm/d3-hierarchy@3.1.2/f1db2593.js">
+<link rel="modulepreload" href="./_npm/d3-interpolate@3.0.1/034b7bcb.js">
+<link rel="modulepreload" href="./_npm/d3-path@3.1.0/4bb53638.js">
+<link rel="modulepreload" href="./_npm/d3-polygon@3.0.1/bbafde58.js">
+<link rel="modulepreload" href="./_npm/d3-quadtree@3.0.1/aa5b35a8.js">
+<link rel="modulepreload" href="./_npm/d3-random@3.0.1/32c7fec2.js">
+<link rel="modulepreload" href="./_npm/d3-scale@4.0.2/567840a0.js">
+<link rel="modulepreload" href="./_npm/d3-scale-chromatic@3.1.0/cf9b720b.js">
+<link rel="modulepreload" href="./_npm/d3-selection@3.0.0/5dcd62f4.js">
+<link rel="modulepreload" href="./_npm/d3-shape@3.2.0/f8e03c56.js">
+<link rel="modulepreload" href="./_npm/d3-time@3.1.0/5bc129e1.js">
+<link rel="modulepreload" href="./_npm/d3-time-format@4.1.0/19c92b44.js">
+<link rel="modulepreload" href="./_npm/d3-timer@3.0.1/f31b5398.js">
+<link rel="modulepreload" href="./_npm/d3-transition@3.0.1/8debb4ba.js">
+<link rel="modulepreload" href="./_npm/d3-zoom@3.0.0/4b0cc581.js">
+<link rel="modulepreload" href="./_node/@lezer/lr@1.4.2/index.a5c97d6c.js">
+<link rel="modulepreload" href="./_npm/internmap@2.0.3/5eed35fd.js">
+<link rel="modulepreload" href="./_npm/delaunator@5.0.1/e67acb27.js">
+<link rel="modulepreload" href="./_npm/robust-predicates@3.0.2/8ac9039b.js">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="module">
+
+import {define} from "./_observablehq/client.40bd02be.js";
+import {registerFile} from "./_observablehq/stdlib.10504731.js";
+
+registerFile("./cul/how-much.cul.js", {"name":"./cul/how-much.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much.cul.3d23ac9d.js","lastModified":1726072853955,"size":3845});
+
+define({id: "79154911", inputs: ["compilations"], outputs: ["getIntrospection","compile_new","bundleIntoOne","packageCalculang_new","calls_fromDefinition","compiled","esm"], body: async (compilations) => {
+const {introspection: getIntrospection, compile_new, bundleIntoOne, packageCalculang_new, calls_fromDefinition} = await import("https://cdn.jsdelivr.net/gh/calculang/calculang@dev/packages/standalone/index.js");
+
+compilations
+
+const compiled = compilations
+
+const esm = compiled[0]
+return {getIntrospection,compile_new,bundleIntoOne,packageCalculang_new,calls_fromDefinition,compiled,esm};
+}});
+
+define({id: "6261cc11", outputs: ["scrollIntoViewOpts"], body: () => {
+const scrollIntoViewOpts = {behaviour:'smooth', block:'center'}
+
+return {scrollIntoViewOpts};
+}});
+
+define({id: "2d3cee39", inputs: ["display","html","formulae_hidden"], body: (display,html,formulae_hidden) => {
+display(html`<style>
+
+/*.vega-embed {
+  width: 100%;
+  height: 100%;
+}*/
+  
+  .answer {
+    color: blue !important;
+    font-weight: bold;
+    font-size: 1.5em !important;
+    left: 80px !important;
+    top: 10px;
+}
+  .answer .tooltiptext  {
+    /*border: 2px dashed black;*/
+    background: #af5a;
+    padding: 10px;
+    border-radius: 15px;
+  
+  }
+
+  .answer .tooltiptext::after {
+    /*color: red;*/
+    border: none;
+  }
+  
+.answer:hover {
+  /*font-size:2em !important;*/
+}
+  
+  body {
+  font-family: system-ui;
+}
+
+pre {
+  line-height: 25px;
+}
+
+.calculang_tooltip {
+  color: #19f;
+  position: relative;
+
+}
+
+.tooltiptext {
+  position: absolute;
+  bottom: calc(100% - 15px);
+  left: anchor(center);
+  transform: translateX(-50%);
+  width: max-content;
+}
+
+.tooltiptext {
+  cursor: zoom-in;
+}
+
+
+.calculang_tooltip.answer .tooltiptext {
+  bottom: 0;
+} 
+
+calculang_tooltip.answer {
+    background-color: lightorange;
+}
+
+
+pre {
+  cursor:default
+}
+  </style>
+  `)
+
+display(html`<style></style>` ?? html`<style>/* DN DISABLED NAVIGATION STYLES */
+
+.inputs {
+  padding: 20px;
+}
+
+button.btn {
+  background-color: antiquewhite;
+  color: blue;
+  padding:0;
+}
+
+.calculang {
+  line-height: 40px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  
+}
+div.calculang.cm-line:has(span.calculang_title) {
+  margin-top:20px;
+}
+
+.calculang.calculang_overwritten { /* not getting picked up ? */
+  text-decoration: line-through;
+  font-weight: bold;
+}
+
+${formulae_hidden.length ? `.calculang {
+    background: #aaf3;
+}` : ''}
+
+
+${formulae_hidden.map(d => `.calculang_f_${d} + .calculang_f_${d}`).join(', ')} {
+  filter: blur(7px);
+  line-height: 5px;
+  opacity: 0.5;
+} /* + selector to exclude first! https://coderwall.com/p/uugurw/css-selector-trick-select-all-elements-except-the-first */
+${formulae_hidden.map(d => `.calculang_f_${d}`).join(', ')} {
+  opacity: 0.5;
+  background: white;
+}${formulae_hidden.map(d => `.calculang_f_${d} .calculang_tooltip`).join(', ')} {
+  opacity: 0.1;
+  background: white;
+}
+${formulae_hidden.map(d => `.calculang_f_${d} > .calculang_title`).join(', ')} {
+  background-color: lightgreen;
+  font-size: 0.5em;
+}
+
+
+
+.tooltiptext {/* not all tooltiptexts go under a calculang call span! (single-length ones dont) */
+  /*color: red;*/
+  font-weight: bold;
+
+}
+
+.calculang .calculang_title span {
+  padding: 3px;
+  background: #af54;
+  font-size: 1.5em;
+  font-weight: bold;
+  border: 1px solid grey;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+
+}
+</style>
+`)
+}});
+
+define({id: "120c794b", inputs: ["esm","compiled","calls_fromDefinition","introspection"], outputs: ["SourceMapConsumer","map","maps","mapsc","calls_annotations"], body: async (esm,compiled,calls_fromDefinition,introspection) => {
+const {SourceMapConsumer} = await import("./_npm/source-map-js@1.2.1/d84cc5a3.js");
+
+const map = new SourceMapConsumer(esm.map);
+
+//const esm = compiled[0]
+
+
+const maps = compiled.map(d => d.map)
+const mapsc = maps.map(d => new SourceMapConsumer(d))
+
+
+//const cul_scope_id = 0
+//debugger;
+const calls_annotations = 
+  calls_fromDefinition(introspection).filter(d => d.reason == 'call' && d.from != '0_undefined')
+  .map (d => ({...d, cul_scope_id: +d.from/*from/to are consistent due to bringing everything into common scope*/.split('_')[0]}))
+        .map((d) => ({
+        ...d,
+        mjs_loc: {
+          start: mapsc[d.cul_scope_id].generatedPositionFor({
+            ...d.loc.start,
+            source: maps[d.cul_scope_id].sources[0] //`${only_entrypoint_no_cul_js}-nomemo.cul.js` // todo update !
+          }),
+          end: mapsc[d.cul_scope_id].generatedPositionFor({
+            ...d.loc.end,
+            source: maps[d.cul_scope_id].sources[0] //`${only_entrypoint_no_cul_js}-nomemo.cul.js`
+          })
+        }
+      }))
+      .map((d) => ({
+        ...d,
+        mjs: compiled[d.cul_scope_id].code
+          .split("\n")
+        [d.mjs_loc.start.line - 1].substring(
+          d.mjs_loc.start.column,
+          d.mjs_loc.end.column
+        )
+      })) // assuming completely on one line
+      .map(d => ({...d, mjs: d.mjs.slice(-1) == ')' ? d.mjs : d.mjs+')'}))/*issue for simple-loan final call for some reason??*/
+//       .map(d => {
+//         if (!(CONFIG.USE_HIGHLIGHTING || 0)) return d;
+//         //return d; I did stop this for some reason? DOESNT WORK FOR LIFE
+//   const selection_fn = new Function("model", "{"+Object.keys(cursor).join(",")+"}", `Object.assign(window, model); try { return ({value:${d.mjs}, cursor: ${d.mjs.slice(d.from.length-2)}}) } catch(e) { console.error('trap2', e)}`) // using hacky way to get cursor, for calculang-at-fosdem I used babel: `is` function
+//   return {...d, ...selection_fn(model, cursor)} // try important due to cursor often not setup initially (e.g. awaiting)
+// })
+return {SourceMapConsumer,map,maps,mapsc,calls_annotations};
+}});
+
+define({id: "16416131", inputs: ["introspection","model","cursor"], outputs: ["fns_annotations"], body: (introspection,model,cursor) => {
+//debugger
+const fns_annotations = [...introspection.cul_functions.values()].filter(
+        (d) =>
+          d.reason == "definition" || d.reason == 'definition (renamed)' /*&&
+          d.cul_scope_id == cul_scope_id*/
+      )
+      .map(d => {
+        //if (d.name == 'leftness') debugger;
+        //debugger;
+        const dd = {...d}
+        //debugger;
+        dd.inputs = [...introspection.cul_input_map.get(d.cul_scope_id+'_'+d.name)]
+
+        const selection_fn = new Function("model", "{"+dd.inputs.join(",")+"}", `Object.assign(window, model); try { return s${dd.cul_scope_id}_${d.name}({${dd.inputs.join(",")}}) } catch(e) { console.error('trap', e) }`)
+
+        dd.v = selection_fn(model, cursor)
+
+        return dd //return selection_fn(model, c)
+      })
+
+window.fns_annotations = fns_annotations;
+return {fns_annotations};
+}});
+
+define({id: "bb76e6ef", inputs: ["map","selection","esm"], outputs: ["selection_start","selection_end","esm_split"], body: (map,selection,esm) => {
+
+
+const selection_start = map.generatedPositionFor({...selection.from, source:"unknown"})
+const selection_end = map.generatedPositionFor({...selection.to, source:"unknown"})
+
+const esm_split = esm.code.split('\n')
+return {selection_start,selection_end,esm_split};
+}});
+
+define({id: "aec11181", inputs: ["introspection","formulae_visible"], outputs: ["formulae_all","formulae_hidden"], body: (introspection,formulae_visible) => {
+const formulae_all = [...introspection.cul_functions.values()].filter(d => d.reason == 'definition').map(d => d.name)
+
+const formulae_hidden = formulae_all.filter((d) => !formulae_visible.includes(d))
+
+
+return {formulae_all,formulae_hidden};
+}});
+
+define({id: "93948b33", inputs: ["d3","fmt_fmt"], outputs: ["fmt2"], body: (d3,fmt_fmt) => {
+// todo fmt hints or templates? like a type or unit?
+// is this a big bottleneck?
+const fmt2 = (name, value) => {
+  name = name?.toLowerCase();
+  if (name == 'emissions_my_lifetime_proportion') return d3.format(',.2%')(value)
+  if (name == 'x' || name == 'y') return d3.format(',.4f')(value)
+  if (name == "map") return "[[..]]"
+  if (Array.isArray(value)) return "[..]"
+  /*if (modelname == 'fizzbuzz') return typeof value == 'number' ? d3.format(',.0f')(value) : value // works well for fizzbuzz
+      if (name == 'now' || name == 'date') return d3.timeFormat("%Y-%m-%d")(value)
+
+  if (modelname == 'emissions_my_lifetime') {
+    if (name == 'now') return d3.timeFormat("%Y-%m-%d")(value)
+    if (name == "emissions_my_lifetime_proportion") return d3.format(".3%")(value)
+    if (typeof value == 'number')
+    return d3.format(".5k")(value)
+  }*/
+  if (name == "v") return d3.format(",.5f")(value)
+  if (name == "v_pow_term_left") return d3.format(",.5f")(value)
+  if (name.includes("_hit_object")) return "{..}"//`{x: ${value.x.toFixed(2)}, y: ${value.y.toFixed(2)}, v: ${value.v}, step_in: ${value.step_in}}`
+  if (name.includes("_co")) return d3.format(",.0f")(value)
+  if (name.includes("rate") && name.includes("interest")) return d3.format(".3%")(value)
+  if (name.includes("rate") || name.includes("percent") || name.includes("fraction")) return d3.format(".2%")(value)
+  if ((name.includes("year")) || name.includes("term") || name.includes("duration") || name.includes("frame")) return d3.format(".0f")(value)
+  if (name.includes("object") || typeof value != 'number') return JSON.stringify(value)
+
+  return d3.format(fmt_fmt)(value)
+}
+
+return {fmt2};
+}});
+
+define({id: "53da6bd4", inputs: ["fns_annotations","fmt2"], body: (fns_annotations,fmt2) => {
+/*cul_scope_id;
+console.log('CUL SCOPE ID', cul_scope_id); // 
+*/
+
+// DOM not updated at this point in scope change !!
+fns_annotations.forEach((d,i) => {
+  // error => breaks follow ups
+  if (0) { // TEMP Answers instead of tooltips
+  if (document.getElementById(d.name)) // TODO replace with fmt2?
+  document.getElementById(d.name).innerHTML = JSON.stringify(d.v) /*d3.format(',.2f')(d.v)*/ + "<div class='cm-tooltip-arrow' />"
+  }
+  else {
+    //debugger;
+    let e = document.getElementById('a-'+i)
+    if (e)
+    e.textContent = fmt2(d.name, d.v)//fmt(v);
+  }
+});
+}});
+
+define({id: "186691f5", inputs: ["calls_annotations","fmt2"], body: (calls_annotations,fmt2) => {
+window.calls_annotations = calls_annotations;
+
+calls_annotations.forEach((d, i) => {
+  // error => breaks follow ups
+  if (document.getElementById('w-'+i))
+  document.getElementById('w-'+i).textContent = fmt2(d.from.split('_').slice(1).join('_'), d.value)//JSON.stringify(d.v) /*d3.format(',.2f')(d.v)*/ + "<div class='cm-tooltip-arrow' />"
+});
+}});
+
+define({id: "a3f19179", inputs: ["cursor0"], outputs: ["cursor"], body: (cursor0) => {
+const cursor = {...cursor0} // TODO add extra when I do reactive
+return {cursor};
+}});
+
+define({id: "931a68e0", inputs: ["view","Inputs"], outputs: ["fmt_fmt","actions"], body: (view,Inputs) => {
+const fmt_fmt = view(Inputs.text({value:",.2f", label: 'fallback format string'}))
+const actions = view(Inputs.toggle({label:'vega actions', value: false}))
+return {fmt_fmt,actions};
+}});
+
+define({id: "3c980f01", inputs: ["display","html"], outputs: ["tabs"], body: (display,html) => {
+const tabs = true;
+
+display(html`
+<style>
+${tabs && `#tabs-container input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+#tabs-container .tab {
+  display: none;
+}
+#tabs-container .tab {
+  order: 1;
+}
+#tabs-container {
+  flex-wrap: wrap;
+}
+
+`}
+</style>
+`)
+return {tabs};
+}});
+
+define({id: "0968522c", inputs: ["Mutable"], outputs: ["cursor0","setCursor"], body: (Mutable) => {
+const cursor0 = Mutable({}) // every input should be in, but with what values?
+
+const setCursor = (k,v) => {
+  //if (k == 'ray_angle_in') debugger;
+  //if (k == 'keys_stream_function_in') debugger;
+  cursor0.value = {...cursor0.value, [k]:v};
+}
+return {cursor0,setCursor};
+}});
+
+define({id: "a76371a0", inputs: ["Mutable"], outputs: ["formula","setFormula"], body: (Mutable) => {
+const formula = Mutable("")
+
+const setFormula = (v) => {
+  formula.value = v
+}
+return {formula,setFormula};
+}});
+
+define({id: "370e1fe7", inputs: ["Mutable","setModel","setIntrospection","setCompilations","setCursor","setFormula","display"], outputs: ["ab","selection","formulae_visible","hover","set_formulae_visible","set_hover","x"], body: async (Mutable,setModel,setIntrospection,setCompilations,setCursor,setFormula,display) => {
+const {ab} = await import("./_import/components/editor.7df37247.js");
+
+const selection = Mutable({from:{line:1,column:1}, to:{line:1,column:2}})
+
+
+const formulae_visible = Mutable([]); // chg to all ? formulae_all
+const hover = Mutable(""); // chg to all ? formulae_all
+
+function set_formulae_visible (d) {
+  formulae_visible.value = [...d]
+}
+
+function set_hover (d) {
+  hover.value = d
+}
+
+
+const x = ab({setModel, setIntrospection, setCompilations,
+              set_formulae_visible, set_hover,
+              setCursor,
+              setFormula})
+
+display(x)
+return {ab,selection,formulae_visible,hover,set_formulae_visible,set_hover,x};
+}});
+
+define({id: "7e0f2ad4", outputs: ["calcuvizspec","calcudata","calcuvegadata"], body: async () => {
+const [{calcuvizspec, calcudata}, {calcuvegadata}] = await Promise.all([import("https://cdn.jsdelivr.net/gh/declann/calculang-js-browser-dev@main/helpers.js"), import("./_import/components/calcuvegadata.f46095cf.js")]);
+
+
+
+
+return {calcuvizspec,calcudata,calcuvegadata};
+}});
+
+define({id: "abbf8053", inputs: ["x"], body: (x) => {
+x.compile();
+//await x.setScope(0);
+}});
+
+define({id: "8bc0671c", inputs: ["Mutable"], outputs: ["model","old_model","setModel"], body: (Mutable) => {
+const model = Mutable({});
+const old_model = Mutable({});
+
+function setModel(v) {
+  old_model.value = model.value;
+  model.value = v;
+}
+return {model,old_model,setModel};
+}});
+
+define({id: "db8bcf1f", inputs: ["Mutable"], outputs: ["compilations","setCompilations"], body: (Mutable) => {
+const compilations = Mutable([]);
+
+function setCompilations(v) {
+  compilations.value = [...v];
+}
+return {compilations,setCompilations};
+}});
+
+define({id: "c2aa7f0b", inputs: ["Mutable"], outputs: ["introspection","setIntrospection"], body: (Mutable) => {
+const introspection = Mutable({});
+
+function setIntrospection(v) {
+  introspection.value = v;
+}
+return {introspection,setIntrospection};
+}});
+
+define({id: "56974c89", inputs: ["echos"], body: (echos) => {
+echos;
+
+// wrap echoed source code by details tag
+// this causes problems in FF mobile??
+/*document.querySelectorAll('.observablehq-pre-container:has(> pre[data-language="js"])').forEach(el => {
+  // no echos on dev server:
+  if (window.location.origin.includes('127.0.0.1')) {
+    el.remove();
+    return;
+  }
+  let wrapper = document.createElement('details');
+  wrapper.className = 'code'
+  let summary = document.createElement('summary')
+  summary.textContent = "code 👀"
+  wrapper.appendChild(summary)
+  el.parentNode.insertBefore(wrapper, el);
+  wrapper.appendChild(el);
+});*/
+}});
+
+define({id: "9bf51115", inputs: ["introspection"], outputs: ["inputs","formulae","formulae_not_inputs"], body: (introspection) => {
+// these need more thought in a modular world
+// or i am overthinking it
+const inputs = [...introspection.cul_functions.values()].filter(d => d.reason == 'input definition' /* Breaks show demand curve && d.cul_scope_id == 0*/).map(d => d.name).sort()
+
+//display(Object.values(introspection.cul_functions))
+//display([...introspection.cul_functions.values()])
+
+const formulae = [...introspection.cul_functions.values()].filter(d => d.reason == 'definition').map(d => d.name)
+
+
+const formulae_not_inputs = [...introspection.cul_functions.values()].filter(d => d.reason == 'definition' && inputs.indexOf(d.name+'_in') == -1).map(d => d.name)
+//display(formulae_not_inputs)
+
+
+
+return {inputs,formulae,formulae_not_inputs};
+}});
+
+define({id: "61a97232", inputs: ["fns_annotations","d3"], outputs: ["fmt"], body: (fns_annotations,d3) => {
+/*document.querySelectorAll('.tablet_cost').forEach(d => {
+  d.textContent = model.tablet_cost({}) + Math.random()
+  })*/
+fns_annotations.forEach(d => {
+  document.querySelectorAll('.'+d.name).forEach(e => {
+    //if (e.textContent != fmt(d.name, d.v)) { // LOST PRECISION for this comparison.....
+    if (e.dataset.v != d.v) { // bad comparison?
+      e.classList.remove('introduce')
+      e.focus()
+      e.textContent = fmt(d.name,d.v)
+      e.dataset.v = d.v
+      e.classList.add('introduce')
+    }
+  })
+});
+
+function fmt(formula, v) {
+  if (formula == 'tablet_cost') return '€ ' + d3.format(',.0f')(v);
+  if (formula == 'tablets_per_person') return d3.format(',.1f')(v);
+  if (formula == 'tablets_per_primary_pupil') return d3.format(',.1f')(v);
+  if (formula == 'one_off_gift_cost') return '€ ' + d3.format(',.0f')(v);
+  if (formula == 'one_off_gifts_per_person') return d3.format(',.1f')(v);
+  if (formula == 'oasis_tickets_cost') return '€ ' + d3.format(',.2f')(v);
+
+  if (formula == 'oasis_tickets_per_person') return d3.format(',.1f')(v);
+  if (formula == 'oasis_gigs') return d3.format(',.0f')(v)
+  if (formula == 'croke_park_capacity') return d3.format(',.3s')(v);
+  if (formula == 'bike_shed_cost') return '€ ' + d3.format(',.3s')(v);
+  if (formula == 'bike_sheds') return d3.format(',.0f')(v);
+  if (formula == 'national_childrens_hospital_cost') return '€ ' + v/1_000_000_000 + 'Bn';
+  if (formula == 'national_childrens_hospitals') return d3.format(',.1f')(v);
+  if (formula == 'special_needs_assistant_cost') return '€ ' + d3.format(',.0f')(v);
+  if (formula == 'special_needs_assistants_years') return d3.format(',.0f')(v);
+
+  if (formula == 'heat_pump_grant_cost') return '€ ' + d3.format(',.0f')(v);
+  if (formula == 'heat_pump_grants') return d3.format(',.3s')(v);
+  if (formula == 'house_cost') return '€ ' + d3.format(',.3s')(v);
+  if (formula == 'houses') return d3.format(',.0f')(v);
+
+  if (formula == 'house_occupants') return d3.format(',.2f')(v);
+  if (formula == 'house_pc') return d3.format('.1%')(v);
+  if (formula == 'amount_over_tax_revenue_2023') return d3.format('.1%')(v);
+  if (formula == 'amount_over_total_expenditure_2023') return d3.format('.1%')(v);
+  if (formula == 'tax_revenue_2023') return '€ ' + v/1_000_000_000 + 'Bn';
+  if (formula == 'total_expenditure_2023') return '€ ' + v/1_000_000_000 + 'Bn';
+  if (formula == 'national_debt') return '€ ' + v/1_000_000_000 + 'Bn';
+  if (formula == 'amount_over_national_debt') return d3.format('.1%')(v);
+
+  if (formula == 'bike_shed_bikes') return d3.format(',.1f')(v);
+  if (formula == 'bikes_per_bike_shed') return d3.format(',.0f')(v);
+
+
+  if (formula == 'amount') return '€ ' + v/1_000_000_000 + 'Bn';
+
+  else return v
+}
+return {fmt};
+}});
+
+define({id: "d72e0d28", mode: "inline", inputs: ["model","display"], body: async (model,display) => {
+display(await(
+new Array(Math.round(model.oasis_tickets_per_person({})) + 1).join("🎟️")
+))
+}});
+
+define({id: "49c04f94", mode: "inline", inputs: ["model","display"], body: async (model,display) => {
+display(await(
+new Array(Math.round(model.national_childrens_hospitals({})) + 1).join("🏥")
+))
+}});
+
+define({id: "2d2fdab5", inputs: ["x","FileAttachment"], body: async (x,FileAttachment) => {
+await x.setFS({
+  "entry.cul.js": await FileAttachment("./cul/how-much.cul.js").text()
+});
+}});
+
+define({id: "717b92e6", outputs: ["echos"], body: () => {
+const echos = [] // this is used to prevent echoed code blocks from appearing when they are changed during development
+return {echos};
+}});
+
+define({id: "f2a69baf", body: () => {
+/*(new ResizeObserver(entries => {
+  //debugger
+      const contentBoxSize = entries[0].contentBoxSize[0];
+      document.getElementById('ans').style.width = contentBoxSize.inlineSize-10+'px'
+      //document.getElementById('ans').style.height = ''//contentBoxSize.blockSize-10+'px'
+            //document.getElementById('ans').textContent = contentBoxSize.inlineSize
+})).observe(document.getElementById('aa'));*/
+}});
+
+</script>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<!-- I like Framework for the next calculang gallery because reactivity and Markdown for the applications should be nice for contributions  -->
+<!-- But for certain things: such as here, I hack my own reactivity and custom dom changes: see `fns_annotations`. -->
+<!-- and stray a bit from convenient Markdown -->
+<!-- Here it's because I want to be able to highlight numbers that change but I don't want to highlight every number when the model changes, only those that moved (in top-level Framework reactive variable terms when `model` changes all calls to it do too) -->
+<!-- I need to review this - I might be missing a trick? -->
+<!-- AGPL DN -->
+<div class="observablehq observablehq--block"><!--:79154911:--></div>
+<div class="observablehq observablehq--block"><!--:6261cc11:--></div>
+<div class="observablehq observablehq--block"><!--:2d3cee39:--></div>
+<style>
+.calculang_overwritten {
+  text-decoration: line-through;
+  font-weight: normal;
+}
+.calculang_title span {
+  background: lightblue;
+  border-bottom: 1px solid blue;
+}
+.calculang_title.calculang_title_input span {
+  background: pink;
+  border-bottom: 1px solid hotpink;
+}
+
+span.calculang_call { 
+  white-space:nowrap;
+  /*cursor: zoom-in;*/
+  background-color: lightblue;
+}
+
+.calculang_call.calculang_call_input {
+  /*cursor: none;*/
+  background-color: pink;
+}
+
+.calculang_call.calculang_call_input .tooltiptext {
+  color: #f53 !important;;
+}
+
+
+.calculang_title.calculang_title_renamed {
+  text-decoration: line-through;
+  text-decoration-style: dashed;
+}
+</style>
+<div class="observablehq observablehq--block"><!--:120c794b:--></div>
+<div class="observablehq observablehq--block"><!--:16416131:--></div>
+<div class="observablehq observablehq--block"><!--:bb76e6ef:--></div>
+<div class="observablehq observablehq--block"><!--:aec11181:--></div>
+<div class="observablehq observablehq--block"><!--:93948b33:--></div>
+<div class="observablehq observablehq--block"><!--:53da6bd4:--></div>
+<div class="observablehq observablehq--block"><!--:186691f5:--></div>
+<div class="observablehq observablehq--block"><!--:a3f19179:--></div>
+<details style="display: none;opacity:0.3; font-size:0.4em"><summary>opts</summary>
+<div class="observablehq observablehq--block"><!--:931a68e0:--></div>
+</details>
+<style>
+
+  body {margin: 0}
+
+  #tabs-container {
+    /*border: 4px dotted rgba(200,0,0,0.2);
+    border-radius: 40px;
+    background: rgba(0,100,100,0.01);*/
+    /*border-right: 5px solid red;*/
+    display: flex;
+    /*flex-wrap: nowrap;*/
+  }
+
+  #tabs-container input[type="radio"] {
+    display: none;
+  }
+
+  #tabs-container label {
+    padding: 8px 12px;
+    margin: 2px;
+    border: 1px solid gray;
+  }
+
+  #tabs-container .tab {
+    width: 100%;
+    /*background: gray;*/
+    /*border: 1px solid grey;*/
+    border-top: none;
+    order: 0;
+    /*display: none;*/ /* OPTIONAL */
+  }
+
+  #tabs-container input[type="radio"] + label:hover {
+    /*font-size: 1.3em;*/
+background: linear-gradient(skyblue, lightgreen);    /*border-radius: 4px;*/
+  }
+
+
+  #tabs-container input[type="radio"] + label {
+background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
+    border-radius: 10px 10px 0 0;
+    /*border: 1px solid black;*/
+    border-bottom: none;
+    /*display:flex;
+    flex-direction: column;
+    align-items: bottom;*/
+    /*margin: auto 0;*/
+    align-self: flex-end;
+  }
+  #tabs-container input[type="radio"]:checked + label {
+    font-size: 1.5em;
+    background:white;
+    padding: 3px 14px;
+    border: 2px solid black;
+    border-bottom: none;
+  }
+
+  #tabs-container input[type="radio"]:checked + label + .tab {
+    /*display: block;*/ /* OPTIONAL */
+    background: white;
+    
+  }
+
+
+</style>
+<div class="observablehq observablehq--block"><!--:3c980f01:--></div>
+<style>
+          /*.cm-editor { overflow: "auto" }*/
+
+
+
+  .cm-changedText {
+    /*background: linear-gradient(rgba(200,250,200,0.9), rgba(200,100,200,0.9)) bottom/100% 14px no-repeat !important*/
+    background: lightgreen !important;
+    color: blue;
+    //background: linear-gradient(rgba(2,0,36,0) 0%, rgba(9,9,121,0.5) 35%, rgba(0,212,255,0.1) 100%)
+ !important;
+
+  }
+
+  #c {
+    /*border: 4px dotted rgba(200,0,0,0.2);
+    border-radius: 40px;
+    background: rgba(0,100,100,0.01);*/
+  }
+
+  #divB .cm-line {
+    background-color: rgba(25,20,100,0.04) !important;
+  }
+
+  /*.cm-insertedLine > span:not(.cm-changedText) {
+  }
+  .cm-insertedLine {
+    background: rgba(25,20,20,0.1);//opacity: 0.1;
+  }
+  .cm-line {
+    background: rgba(25,20,20,0.1);//opacity: 0.1;
+  }*/
+</style>
+<style>
+  /* CODEMIRROR STYLES */
+    .cm-changedLineGutter {
+    display: none;
+  }
+
+  .cm-deletedChunk {
+    opacity:0.5;
+    display:none;
+  }
+
+  #module-relationships {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+   #module-relationships svg {
+    border: 0.1px dotted gray;
+    padding: 6px;
+   }
+   #module-relationships svg {
+    width: 100px;
+
+   }
+</style>
+<div class="container">
+<div class="box-1">
+<div class="observablehq observablehq--block"><!--:0968522c:--></div>
+<div class="observablehq observablehq--block"><!--:a76371a0:--></div>
+<div class="observablehq observablehq--block"><!--:370e1fe7:--></div>
+<div class="observablehq observablehq--block"><!--:7e0f2ad4:--></div>
+<div class="observablehq observablehq--block"><!--:abbf8053:--></div>
+<div class="observablehq observablehq--block"><!--:8bc0671c:--></div>
+<div class="observablehq observablehq--block"><!--:db8bcf1f:--></div>
+<div class="observablehq observablehq--block"><!--:c2aa7f0b:--></div>
+<div class="observablehq observablehq--block"><!--:56974c89:--></div>
+</div>
+<div class="box-2" id="aa">
+<div class="observablehq observablehq--block"><!--:9bf51115:--></div>
+<div style="padding:10px; background: aliceblue; border: 1px solid black; border-radius: 20px; margin: 10px; max-width: unset" id="main">
+<div class="observablehq observablehq--block"><!--:61a97232:--></div>
+<style>
+@keyframes fadeIn {
+  0% { opacity: 0.5;background: aqua; }
+  50% { background: aqua; opacity: 1; }
+  80% { } /*dark theme should be black, but minor*/
+  100% { opacity: 0.8; background:lightgreen }
+}
+
+.introduce {
+  animation: fadeIn ease 2s;
+  animation-fill-mode: forwards;  
+}
+
+.f {
+  font-weight: bold;
+  padding: 4px;
+  border-radius:3px;
+  /*overflow-wrap: break-word*/
+  text-wrap: nowrap;
+  }
+</style>
+<p>There's <strong><a href="https://duckduckgo.com/?t=h_&amp;q=apple+tax+ireland&amp;iar=news&amp;ia=news" target="_blank" rel="noopener noreferrer">a lot of chatter</a></strong> in the Irish news about <strong>13 billion euros</strong> or <strong>14 billions euros</strong>.</p>
+<h2 style="font-style:italic; margin: 0.5em; margin-bottom:1em;">But how much is <span class="f amount"></span> ?</h2>
+<p>Below are some <em>rough numbers</em>.</p>
+<p>You can check their formulas and assumptions under the tab for '💬' (top left) 🔍</p>
+<p>And, <em>if you want to, <strong>you can change them!</strong></em></p>
+<br>
+<h2 style="font-style:italic; margin: 0.5em; margin-bottom:1em;"><span class="f amount"></span> is...</h2>
+<style>
+ul {
+  margin-bottom: 1.5em;
+}
+
+ul > li > ul {
+  margin-top: 0.2em;
+}
+
+p, li, ul {
+  max-width: unset !important;
+}
+
+  ul {
+  list-style-type: none;
+}
+</style>
+<div style="margin-left:7px;">
+<p>In <span class="f tablet_cost"></span> tablets❓</p>
+<ul>
+<li><span class="f tablets_per_person"></span> tablets per person in Ireland, or <span class="f tablets_per_primary_pupil"></span> tablets per primary school pupil 🧒📲</li>
+</ul>
+<p>In <span class="f one_off_gift_cost"></span> one-off gifts❓</p>
+<ul>
+<li><span class="f one_off_gifts_per_person"></span>x <span class="f one_off_gift_cost"></span> gifts for each person 🎁</li>
+</ul>
+<p>In <span class="f oasis_tickets_cost"></span> <a href="https://duckduckgo.com/?q=oasis+tickets+croke+park&amp;t=h_&amp;iar=news&amp;ia=news" target="_blank" rel="noopener noreferrer">Oasis tickets</a>❓</p>
+<ul>
+<li><span class="f oasis_tickets_per_person"></span> tickets each for every person! 💃<observablehq-loading></observablehq-loading><!--:d72e0d28:-->🕺<div style="height:0.5em"></div></li>
+<li>Oasis might need to play <span class="f oasis_gigs"></span> gigs together in <a href="https://crokepark.ie/stadium/about" target="_blank" rel="noopener noreferrer">Croke Park</a> at <span class="f croke_park_capacity"></span> capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶</li>
+</ul>
+<p>In <span class="f bike_shed_cost"></span> <a href="https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/" target="_blank" rel="noopener noreferrer">bike sheds</a>❓</p>
+<ul>
+<li><span class="f bike_sheds"></span> bike sheds 🚴<div style="height:0.5em"></div></li>
+<li>Using <span class="f bikes_per_bike_shed"></span>x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴</li>
+</ul>
+<p>In <span class="f national_childrens_hospital_cost"></span> <a href="https://www.irishtimes.com/health/2024/02/13/national-childrens-hospital-cost-rises-to-over-2bn-donnelly-confirms/" target="_blank" rel="noopener noreferrer">National Childrens Hospitals</a>❓</p>
+<ul>
+<li><span class="f national_childrens_hospitals"></span> National Childrens Hospitals <observablehq-loading></observablehq-loading><!--:49c04f94:-->👧🏻</li>
+</ul>
+<p>In Special Needs Assistants at a salary of <span class="f special_needs_assistant_cost"></span> pa❓</p>
+<ul>
+<li><span class="f special_needs_assistants_years"></span> years of salary at this rate ✨</li>
+</ul>
+<p>In <span class="f heat_pump_grant_cost"></span> heat pump grants❓</p>
+<ul>
+<li><span class="f heat_pump_grants"></span>x <span class="f heat_pump_grant_cost"></span> heat pump grants 🔥</li>
+</ul>
+<p>In <span class="f house_cost"></span> houses❓</p>
+<ul>
+<li>Fully funded: <span class="f houses"></span> of them 🏡<div style="height:0.5em"></div></li>
+<li>Using an average occupancy of <span class="f house_occupants"></span> people: enough on it's own to house <span class="f house_pc"></span> of the population</li>
+</ul>
+</div>
+<h2 style="font-style:italic; margin: 0.5em 1em; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</h2>
+<p>But for other context, it's <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> <a href="https://whereyourmoneygoes.gov.ie/en/2023/" target="_blank" rel="noopener noreferrer">total expenditure in 2023</a>, and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. -->.</p>
+<p>🤷</p>
+</div>
+<style>
+#calculang-info {
+  background: lightyellow;
+  margin: 50px;
+  padding: 0 1em;
+  border: 4px dashed lightgreen;
+  font-size: 0.8em;
+  border-radius: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+#calculang-info > #end {
+  font-style: italic;
+}
+</style>
+<div id="calculang-info">
+<p>These <a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation" target="_blank" rel="noopener noreferrer"><i>back-of-the-envelope calculations</i></a> are made using <a href="https://calculang.dev" target="_blank" rel="noopener noreferrer">calculang</a>: a language for calculations for <i>flexibility, transparency, and communication</i> about numbers.</p>
+<p>You can check (and change!) their formulas and assumptions under the tab for '💬' (top left)</p>
+<p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about" target="_blank" rel="noopener noreferrer">Declan</a>.</i> <strong>Please don't use these numbers for budgetary planning</strong> ⚠️</p>
+<p><a href="https://github.com/declann/howmuchis13billioneuros.com" target="_blank" rel="noopener noreferrer"><img width="25px" height="25px" src="./_file/brand-git.ae3af407.png"></a> <a style="margin-left:12px; border:1px solid lightblue; background: aliceblue; border-radius:2px" href="https://calcwithdec.dev" target="_blank" rel="noopener noreferrer">CalcWithDec.dev</a></p>
+</div>
+<div class="observablehq observablehq--block"><!--:2d2fdab5:--></div>
+<div class="observablehq observablehq--block"><!--:717b92e6:--></div>
+<div class="observablehq observablehq--block"><!--:f2a69baf:--></div>
+<div style="height:100vh"></div><!-- needed or flex for boxes is messed! -->
+</div><!-- box-2 -->
+</div> <!-- .container -->
+</main>
+</div>

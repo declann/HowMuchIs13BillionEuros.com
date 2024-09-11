@@ -1,0 +1,2 @@
+import{snippetCompletion as d}from"../@codemirror/autocomplete@6.18.0/index.0467ca2b.js";function f(o){let n=o.prefix||"",t=(o.scope||"").trim(),r=[],p="",s="",i="";for(const[c,e]of Object.entries(o.source))!["","*"].includes(t)&&typeof e.scope<"u"&&!e.scope.includes(t)||(s=Array.isArray(e.body)?e.body.join(`
+`):e.body,i=n+c,p=typeof e.description<"u"&&(typeof o.description>"u"||o.description!=!1)?": "+e.description:"",r.push(d(s,{label:i,detail:p,type:"keyword"})));return r}export{f as default};
