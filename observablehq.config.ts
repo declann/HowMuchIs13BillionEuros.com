@@ -5,7 +5,7 @@ import { include } from "@mdit/plugin-include";
 // See https://observablehq.com/framework/config for documentation.
 export default {
   // The project’s title; used in the sidebar and webpage titles.
-  title: "How much is 13 billion",
+  title: "How much is 13 billion euros?",
   style: "/layout-styles.css",
 
   //pages: [],
