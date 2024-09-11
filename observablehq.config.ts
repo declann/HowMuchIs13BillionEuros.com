@@ -21,7 +21,7 @@ export default {
   //     ]
   //   }
   // ],
-  head: '<meta name="viewport" content="width=device-width,initial-scale=1">', // removes maximum-scale?
+  head: '<meta property="og:image" content="/preview.png"/><meta property="og:description" content="Various calculations"/><meta property="og:title" content="How much is 13 billion euros?"/><meta name="viewport" content="width=device-width,initial-scale=1">', // removes maximum-scale?
   // Some additional configuration options and their defaults:
   // theme: "default", // try "light", "dark", "slate", etc.
   // header: "", // what to show in the header (HTML)
