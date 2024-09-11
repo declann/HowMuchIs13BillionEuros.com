@@ -1,4 +1,3 @@
-
 // Here find calculations and assumptions
 // I admit I didn't do a lot of science for these
 // But at least you can see them, and you can change them!
