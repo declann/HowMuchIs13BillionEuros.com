@@ -131,7 +131,7 @@ p, li, ul {
 
 <div style="margin-left:7px;">
 
-In <span class="f tablet_cost"></span> tablets❓
+In <span class="f tablet_cost"></span> tablet devices❓
 
 - <span class="f tablets_per_person"></span> tablets per person in Ireland, or <span class="f tablets_per_primary_pupil"></span> tablets per primary school pupil 🧒📲
 
