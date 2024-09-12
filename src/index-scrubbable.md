@@ -288,7 +288,7 @@ p, li, ul {
 In ${draggable_input({input:'national_childrens_hospital_cost_in', value: 2_240_000_000, step:20000000})} [National Childrens Hospitals](https://www.irishtimes.com/health/2024/02/13/national-childrens-hospital-cost-rises-to-over-2bn-donnelly-confirms/)❓
   - <span class="f national_childrens_hospitals"></span> National Childrens Hospitals ${new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")}👧🏻
 
-In ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})} one-off gifts❓
+In ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:6})} one-off gifts❓
   - <span class="f one_off_gifts_per_person"></span>x ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})} gifts for each person in Ireland 🎁
 
 In ${draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})} [bike sheds](https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/)❓
