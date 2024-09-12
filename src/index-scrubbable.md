@@ -130,7 +130,7 @@ function fmt(formula, v) {
   if (formula == 'croke_park_capacity') return d3.format(',.3s')(v);
   if (formula == 'bike_shed_cost') return '€ ' + d3.format(',.3s')(v);
   if (formula == 'bike_sheds') return d3.format(',.0f')(v);
-  if (formula == 'national_childrens_hospital_cost') return '€ ' + v/1_000_000_000 + 'Bn';
+  if (formula == 'national_childrens_hospital_cost') return '€ ' + d3.format(',.2f')(v/1_000_000_000) + 'Bn';
   if (formula == 'national_childrens_hospitals') return d3.format(',.1f')(v);
   if (formula == 'special_needs_assistant_cost') return '€ ' + d3.format(',.0f')(v);
   if (formula == 'special_needs_assistants_years') return d3.format(',.0f')(v);
@@ -144,16 +144,17 @@ function fmt(formula, v) {
   if (formula == 'house_pc') return d3.format('.1%')(v);
   if (formula == 'amount_over_tax_revenue_2023') return d3.format('.1%')(v);
   if (formula == 'amount_over_total_expenditure_2023') return d3.format('.1%')(v);
-  if (formula == 'tax_revenue_2023') return '€ ' + v/1_000_000_000 + 'Bn';
-  if (formula == 'total_expenditure_2023') return '€ ' + v/1_000_000_000 + 'Bn';
-  if (formula == 'national_debt') return '€ ' + v/1_000_000_000 + 'Bn';
+  if (formula == 'tax_revenue_2023') return '€ ' + d3.format(',.2f')(v/1_000_000_000) + 'Bn';
+  if (formula == 'total_expenditure_2023') return '€ ' + d3.format(',.2f')(v/1_000_000_000) + 'Bn';
+  if (formula == 'national_debt') return '€ ' + d3.format(',.2f')(v/1_000_000_000) + 'Bn';
   if (formula == 'amount_over_national_debt') return d3.format('.1%')(v);
 
   if (formula == 'bike_shed_bikes') return d3.format(',.0f')(v);
   if (formula == 'bikes_per_bike_shed') return d3.format(',.1f')(v);
 
 
-  if (formula == 'amount') return '€ ' + v/1_000_000_000 + 'Bn';
+  //if (formula == 'amount') return '€ ' + Math.round(v*100/1_000_000_000)/100 + 'Bn';
+  if (formula == 'amount') return '€ ' + d3.format(',.2f')(v/1_000_000_000) + 'Bn';
 
   else return v
 }
@@ -227,10 +228,11 @@ function setOption(v) {
 ```
 
 ```js
-html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ireland&iar=news&ia=news">a lot of chatter</a></strong> in the Irish news about <a onclick=${() => {setCursor('amount_in', 1.3e10); setOption(13)}}><span class="amount-option ${option==13?"selected-amount-option" : ""}">13 Billion euros</span></a> or <a onclick=${() => {setCursor('amount_in', 1.4e10); setOption(14)}}><span class="amount-option ${option==14?"selected-amount-option" : ""}">14 Billion euros</span></a>.`
+html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ireland&iar=news&ia=news">a lot of chatter</a></strong> in the Irish news about <a onclick=${() => {setCursor('amount_in', 1.3e10); setOption(13)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.3e10)<1?"selected-amount-option" : ""}">13 Billion euros</span></a> or <a onclick=${() => {setCursor('amount_in', 1.4e10); setOption(14)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.4e10)<1?"selected-amount-option" : ""}">14 Billion euros</span></a>.`
 ```
 
-<span style="font-style:italic; margin-bottom:1em;">But how much is **€ ${option}Bn** ?</span> 🤯
+
+<span style="padding:1px;font-style:italic; margin-bottom:1em; background: lightgreen">But how much is **€ ${option}Bn** ?</span> 🤯
 
 
 <p style="line-height:1em">
@@ -239,10 +241,11 @@ html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ir
 
 
 
-<h2 style="font-style:italic;  margin-bottom:1em;">€ ${option}Bn is...</h2>
+<h4 style="font-style:italic;  margin-bottom:1em;">€ ${option}Bn is...</h4>
 
 <style>
 .input-scrubbable-number {
+  text-wrap: nowrap;
   position: relative;
   z-index:10;
     /*font-size: 125%;
