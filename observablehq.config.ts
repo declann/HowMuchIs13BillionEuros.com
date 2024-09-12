@@ -21,7 +21,7 @@ export default {
   //     ]
   //   }
   // ],
-  head: '<meta property="og:url" content="https://howmuchis13billion.com"/><meta property="og:image" content="https://cdn.jsdelivr.net/gh/declann/howmuchis13billioneuros.com@main/preview.png"/><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/declann/howmuchis13billioneuros.com@main/preview.png"/><meta property="og:description" content="Various back-of-the-envelope calculations"/><meta property="og:title" content="How much is 13 billion euros?"/><meta name="viewport" content="width=device-width,initial-scale=1">', // removes maximum-scale?
+  head: '<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>"><meta property="og:url" content="https://howmuchis13billion.com"/><meta property="og:image" content="https://cdn.jsdelivr.net/gh/declann/howmuchis13billioneuros.com@main/preview.png"/><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/declann/howmuchis13billioneuros.com@main/preview.png"/><meta property="og:description" content="Various back-of-the-envelope calculations"/><meta property="og:title" content="How much is 13 billion euros?"/><meta name="viewport" content="width=device-width,initial-scale=1">', // removes maximum-scale?
   // Some additional configuration options and their defaults:
   // theme: "default", // try "light", "dark", "slate", etc.
   // header: "", // what to show in the header (HTML)
