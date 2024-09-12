@@ -35,7 +35,7 @@ function draggable_input({input, value=13, step=1}) {
     eventToCoordinates(event) { return {x: event.clientX, y: event.clientY}; },
     dragging: null,
     get pos() {debugger
-        return {x: el.dataset.value/step ?? 0, y: 0};
+        return {x: /*el.dataset.value*/window.cursor[input]/* this covers when an input appears twice: dont reset when the dragged one is switched *//step ?? 0, y: 0};
     },
     set pos(p) { 
         // This is a constrained drag that ignores the
@@ -234,7 +234,7 @@ html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ir
 
 
 <p style="line-height:1em">
-<span style="font-size:0.8em">Check my <i>back of the envelope calculations</i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:2px; opacity:0.8">numbers</span> ↔️</span>
+<span style="font-size:0.8em">Check my <i>back of the envelope calculations</i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:2px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
 </p>
 
 
@@ -310,9 +310,9 @@ In ${draggable_input({input:'house_cost_in', value: 300000, step:1000})} houses�
 
 </div>
 
-<h2 style="font-style:italic; margin: 0.5em 1em; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</h2>
+<h2 style="font-style:italic; margin: 0 0; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</h2>
 
-But for other context, it's <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> [total expenditure in 2023](https://whereyourmoneygoes.gov.ie/en/2023/), and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. -->.
+But for other context, ${draggable_input({input:'amount_in', value: 13_000_000_000, step:10_000_000})} is <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> [total expenditure in 2023](https://whereyourmoneygoes.gov.ie/en/2023/), and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. -->.
 
 🤷
 

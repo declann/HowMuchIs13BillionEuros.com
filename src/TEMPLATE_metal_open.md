@@ -362,6 +362,8 @@ calls_annotations.forEach((d, i) => {
 
 ```js
 const cursor = {...cursor0} // TODO add extra when I do reactive
+
+window.cursor = cursor
 ```
 
 <details style="display: none;opacity:0.3; font-size:0.4em"><summary>opts</summary>
