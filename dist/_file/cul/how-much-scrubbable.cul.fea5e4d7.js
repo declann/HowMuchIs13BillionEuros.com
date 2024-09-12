@@ -45,6 +45,7 @@ export const special_needs_assistant_cost = () => special_needs_assistant_cost_i
 export const heat_pump_grant_cost = () => heat_pump_grant_cost_in // 6500 https://www.seai.ie/grants/home-energy-grants/individual-grants/heat-pump-systems/
 export const house_cost = () => house_cost_in
 
+// other
 export const croke_park_capacity = () => croke_park_capacity_in; // 82.3k https://crokepark.ie/stadium/about
 export const house_occupants = () => house_occupants_in // 2.74; // CSO "In 2022, there were on average 2.74 people per private household" https://www.cso.ie/en/releasesandpublications/ep/p-cpsr/censusofpopulation2022-summaryresults/householdsizeandmaritalstatus/
 export const bikes_per_bike_shed = () => bikes_per_bike_shed_in; // 18 ""

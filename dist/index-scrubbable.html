@@ -90,7 +90,7 @@
 import {define} from "./_observablehq/client.40bd02be.js";
 import {registerFile} from "./_observablehq/stdlib.10504731.js";
 
-registerFile("./cul/how-much-scrubbable.cul.js", {"name":"./cul/how-much-scrubbable.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much-scrubbable.cul.532e24c0.js","lastModified":1726183944793,"size":3730});
+registerFile("./cul/how-much-scrubbable.cul.js", {"name":"./cul/how-much-scrubbable.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much-scrubbable.cul.fea5e4d7.js","lastModified":1726184452220,"size":3739});
 
 define({id: "6f9c26cc", inputs: ["fmt","setCursor"], outputs: ["draggable_input","clamp","makeDraggable"], body: (fmt,setCursor) => {
 function draggable_input({input, value=13, step=1}) {
@@ -791,15 +791,15 @@ draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})
 ))
 }});
 
-define({id: "cd3647d8", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+define({id: "dd9050c4", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
-draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})
+draggable_input({input:'house_cost_in', value: 300000, step:1000})
 ))
 }});
 
-define({id: "753ca96f", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+define({id: "94adfe47", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
-draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})
+draggable_input({input:'house_occupants_in', value: 2.74, step:.01})
 ))
 }});
 
@@ -821,6 +821,18 @@ draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})
 ))
 }});
 
+define({id: "cd3647d8", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+display(await(
+draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})
+))
+}});
+
+define({id: "753ca96f", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+display(await(
+draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})
+))
+}});
+
 define({id: "d6cd2c3c", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
 draggable_input({input:'special_needs_assistant_cost_in', value: 34472, step:100})
@@ -836,18 +848,6 @@ draggable_input({input:'heat_pump_grant_cost_in', value: 6500, step:50})
 define({id: "04448e32", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
 draggable_input({input:'heat_pump_grant_cost_in', value: 6500, step:100})
-))
-}});
-
-define({id: "dd9050c4", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
-display(await(
-draggable_input({input:'house_cost_in', value: 300000, step:1000})
-))
-}});
-
-define({id: "94adfe47", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
-display(await(
-draggable_input({input:'house_occupants_in', value: 2.74, step:.01})
 ))
 }});
 
@@ -1171,15 +1171,20 @@ p, li, ul {
 <ul>
 <li><span class="f one_off_gifts_per_person"></span>x <observablehq-loading></observablehq-loading><!--:ed2fc5a2:--> gifts for each person in Ireland 🎁</li>
 </ul>
+<p>In <observablehq-loading></observablehq-loading><!--:dd9050c4:--> houses❓</p>
+<ul>
+<li>Fully funded: <span class="f houses"></span> of them 🏡<div style="height:0.5em"></div></li>
+<li>Using an average occupancy of <observablehq-loading></observablehq-loading><!--:94adfe47:--> people: enough on it's own to house <span class="f house_pc"></span> of the population</li>
+</ul>
+<p>In <observablehq-loading></observablehq-loading><!--:995d9aab:--> <a href="https://duckduckgo.com/?q=oasis+tickets+croke+park&amp;t=h_&amp;iar=news&amp;ia=news" target="_blank" rel="noopener noreferrer">Oasis tickets</a>❓</p>
+<ul>
+<li><span class="f oasis_tickets_per_person"></span> tickets each for every person in Ireland! 💃<observablehq-loading></observablehq-loading><!--:32a5c061:-->🕺<div style="height:0.5em"></div></li>
+<li>Oasis might need to play <span class="f oasis_gigs"></span> gigs together in <a href="https://crokepark.ie/stadium/about" target="_blank" rel="noopener noreferrer">Croke Park</a> at <observablehq-loading></observablehq-loading><!--:25468d34:--> capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶</li>
+</ul>
 <p>In <observablehq-loading></observablehq-loading><!--:cd3647d8:--> <a href="https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/" target="_blank" rel="noopener noreferrer">bike sheds</a>❓</p>
 <ul>
 <li><span class="f bike_sheds"></span> bike sheds 🚴<div style="height:0.5em"></div></li>
 <li>Using <observablehq-loading></observablehq-loading><!--:753ca96f:-->x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴</li>
-</ul>
-<p>In <observablehq-loading></observablehq-loading><!--:995d9aab:--> <a href="https://duckduckgo.com/?q=oasis+tickets+croke+park&amp;t=h_&amp;iar=news&amp;ia=news" target="_blank" rel="noopener noreferrer">Oasis tickets</a>❓</p>
-<ul>
-<li><span class="f oasis_tickets_per_person"></span> tickets each for every person! 💃<observablehq-loading></observablehq-loading><!--:32a5c061:-->🕺<div style="height:0.5em"></div></li>
-<li>Oasis might need to play <span class="f oasis_gigs"></span> gigs together in <a href="https://crokepark.ie/stadium/about" target="_blank" rel="noopener noreferrer">Croke Park</a> at <observablehq-loading></observablehq-loading><!--:25468d34:--> capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶</li>
 </ul>
 <p>In Special Needs Assistants at a salary of <observablehq-loading></observablehq-loading><!--:d6cd2c3c:--> pa❓</p>
 <ul>
@@ -1188,11 +1193,6 @@ p, li, ul {
 <p>In <observablehq-loading></observablehq-loading><!--:0c72413b:--> heat pump grants❓</p>
 <ul>
 <li><span class="f heat_pump_grants"></span>x <observablehq-loading></observablehq-loading><!--:04448e32:--> heat pump grants 🔥</li>
-</ul>
-<p>In <observablehq-loading></observablehq-loading><!--:dd9050c4:--> houses❓</p>
-<ul>
-<li>Fully funded: <span class="f houses"></span> of them 🏡<div style="height:0.5em"></div></li>
-<li>Using an average occupancy of <observablehq-loading></observablehq-loading><!--:94adfe47:--> people: enough on it's own to house <span class="f house_pc"></span> of the population</li>
 </ul>
 </div>
 <h2 style="font-style:italic; margin: 0 0; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</h2>

@@ -291,23 +291,23 @@ In ${draggable_input({input:'national_childrens_hospital_cost_in', value: 2_240_
 In ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:6})} one-off gifts❓
   - <span class="f one_off_gifts_per_person"></span>x ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})} gifts for each person in Ireland 🎁
 
+In ${draggable_input({input:'house_cost_in', value: 300000, step:1000})} houses❓
+  - Fully funded: <span class="f houses"></span> of them 🏡<div style="height:0.5em" />
+  - Using an average occupancy of ${draggable_input({input:'house_occupants_in', value: 2.74, step:.01})} people: enough on it's own to house <span class="f house_pc"></span> of the population
+
+In ${draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})} [Oasis tickets](https://duckduckgo.com/?q=oasis+tickets+croke+park&t=h_&iar=news&ia=news)❓
+  - <span class="f oasis_tickets_per_person"></span> tickets each for every person in Ireland! 💃${new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
+  - Oasis might need to play <span class="f oasis_gigs"></span> gigs together in [Croke Park](https://crokepark.ie/stadium/about) at ${draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})} capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶
+
 In ${draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})} [bike sheds](https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/)❓
   - <span class="f bike_sheds"></span> bike sheds 🚴<div style="height:0.5em" />
   - Using ${draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})}x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴
-
-In ${draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})} [Oasis tickets](https://duckduckgo.com/?q=oasis+tickets+croke+park&t=h_&iar=news&ia=news)❓
-  - <span class="f oasis_tickets_per_person"></span> tickets each for every person! 💃${new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
-  - Oasis might need to play <span class="f oasis_gigs"></span> gigs together in [Croke Park](https://crokepark.ie/stadium/about) at ${draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})} capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶
 
 In Special Needs Assistants at a salary of ${draggable_input({input:'special_needs_assistant_cost_in', value: 34472, step:100})} pa❓
   - <span class="f special_needs_assistants_years"></span> years of salary at this rate ✨
 
 In ${draggable_input({input:'heat_pump_grant_cost_in', value: 6500, step:50})} heat pump grants❓
   - <span class="f heat_pump_grants"></span>x ${draggable_input({input:'heat_pump_grant_cost_in', value: 6500, step:100})} heat pump grants 🔥
-
-In ${draggable_input({input:'house_cost_in', value: 300000, step:1000})} houses❓
-  - Fully funded: <span class="f houses"></span> of them 🏡<div style="height:0.5em" />
-  - Using an average occupancy of ${draggable_input({input:'house_occupants_in', value: 2.74, step:.01})} people: enough on it's own to house <span class="f house_pc"></span> of the population
 
 </div>
 
