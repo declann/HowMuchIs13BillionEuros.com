@@ -643,7 +643,7 @@ export const ab = ({setModel, setIntrospection, setCompilations, set_formulae_vi
 
 
   const d = div.appendChild(html.fragment`
-    <input type="radio" id="input-tab" name="tabs" checked="checked">
+    <input type="radio" id="input-tab" name="tabs">
     <label for="input-tab">💬</label>
     <div class="tab" id="input-div"><select id="filename"><option>PLACEHOLDER</option></select></div>
     <input type="radio" id="interim-tab" name="tabs">
@@ -664,7 +664,7 @@ export const ab = ({setModel, setIntrospection, setCompilations, set_formulae_vi
       <p>♻️ calculang modularity graph</p>
       <p>This website uses jsDelivr Content Delivery Networks to distribute resources</p>
     </div>
-    <input type="radio" id="minimize-tab" name="tabs">
+    <input type="radio" id="minimize-tab" name="tabs" checked="checked">
     <label for="minimize-tab">❌</label><!-- ↑❎ -->
     <div class="tab" id="minimize-div"></div>
     `)

@@ -164,7 +164,7 @@ function fmt(formula, v) {
   0% { opacity: 0.5;background: aqua; }
   50% { background: aqua; opacity: 1; }
   80% { } /*dark theme should be black, but minor*/
-  100% { opacity: 0.8; background:lightgreen }
+  100% { opacity: 0.8; background:transparent }
 }
 
 .introduce {
@@ -186,15 +186,10 @@ function fmt(formula, v) {
   }
 </style>
 
-```js
-const amount_in = view(Inputs.range([13_000_000_000, 14_000_000_000], {step: 0.01, label:'amount'}))
-```
 
 ```js
-setCursor('amount_in', amount_in);
-```
-```js
 // for default values sync here with draggable_input calls (drag uses that value)
+setCursor('amount_in', 13_000_000_000);
 setCursor('tablet_cost_in', 900);
 setCursor('one_off_gift_cost_in', 2000);
 setCursor('oasis_tickets_cost_in', 347);
@@ -207,29 +202,49 @@ setCursor('heat_pump_grant_cost_in', 6500);
 setCursor('house_cost_in', 300000);
 setCursor('house_occupants_in', 2.74);
 setCursor('primary_school_enrolments_in', 558_143);
-
 ```
 
+<style>
+.amount-option {
+  border-bottom: 1px dotted orange;
+  padding: 0 0.2em;
+  font-style: italic;
+  text-wrap: nowrap;
+  color: #0a008b
+}
+.selected-amount-option {
+    border-bottom: 3px dotted orange;
 
-There's **[a lot of chatter](https://duckduckgo.com/?t=h_&q=apple+tax+ireland&iar=news&ia=news)** in the Irish news about **13 billion euros** or **14 billions euros**.
+  font-weight: bold;
+}
+</style>
 
-<h2 style="font-style:italic; margin: 0.5em; margin-bottom:1em;">But how much is ${draggable_input({input:'amount_in', value:13_000_000_000, step:10_000_000})} ?</h2>
+```js
+const option = Mutable(13)
+function setOption(v) {
+  option.value = v
+}
+```
 
-Below are some *rough numbers*.
+```js
+html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ireland&iar=news&ia=news">a lot of chatter</a></strong> in the Irish news about <a onclick=${() => {setCursor('amount_in', 1.3e10); setOption(13)}}><span class="amount-option ${option==13?"selected-amount-option" : ""}">13 Billion euros</span></a> or <a onclick=${() => {setCursor('amount_in', 1.4e10); setOption(14)}}><span class="amount-option ${option==14?"selected-amount-option" : ""}">14 Billion euros</span></a>.`
+```
 
-You can check their formulas and assumptions under the tab for '💬' (top left) 🔍
-
-And, *if you want to, **you can change them!***
-
-<br/>
+<span style="font-style:italic; margin-bottom:1em;">But how much is **€ ${option}Bn** ?</span> 🤯
 
 
+<p style="line-height:1em">
+<span style="font-size:0.8em">Check my <i>back of the envelope calculations</i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:2px; opacity:0.8">numbers</span> ↔️</span>
+</p>
 
 
-<h2 style="font-style:italic; margin: 0.5em; margin-bottom:1em;">${draggable_input({input:'amount_in', value:13_000_000_000, step:10_000_000})} is...</h2>
+
+<h2 style="font-style:italic;  margin-bottom:1em;">€ ${option}Bn is...</h2>
 
 <style>
 .input-scrubbable-number {
+  position: relative;
+  z-index:10;
     /*font-size: 125%;
     width: 3em;
     border: none;
@@ -273,7 +288,7 @@ In ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})} one-of
   - <span class="f one_off_gifts_per_person"></span>x ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})} gifts for each person 🎁
 
 In ${draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})} [Oasis tickets](https://duckduckgo.com/?q=oasis+tickets+croke+park&t=h_&iar=news&ia=news)❓
-  - <span class="f oasis_tickets_per_person"></span> tickets each for every person! 💃${new Array(Math.round(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
+  - <span class="f oasis_tickets_per_person"></span> tickets each for every person! 💃${new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
   - Oasis might need to play <span class="f oasis_gigs"></span> gigs together in [Croke Park](https://crokepark.ie/stadium/about) at ${draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})} capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶
 
 In ${draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})} [bike sheds](https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/)❓
@@ -281,7 +296,7 @@ In ${draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})} [bi
   - Using ${draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})}x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴
 
 In ${draggable_input({input:'national_childrens_hospital_cost_in', value: 2_240_000_000, step:10000000})} [National Childrens Hospitals](https://www.irishtimes.com/health/2024/02/13/national-childrens-hospital-cost-rises-to-over-2bn-donnelly-confirms/)❓
-  - <span class="f national_childrens_hospitals"></span> National Childrens Hospitals ${new Array(Math.round(model.national_childrens_hospitals(cursor)) + 1).join("🏥")}👧🏻
+  - <span class="f national_childrens_hospitals"></span> National Childrens Hospitals ${new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")}👧🏻
 
 In Special Needs Assistants at a salary of ${draggable_input({input:'special_needs_assistant_cost_in', value: 34472, step:100})} pa❓
   - <span class="f special_needs_assistants_years"></span> years of salary at this rate ✨
