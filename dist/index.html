@@ -12,7 +12,7 @@
 <link rel="modulepreload" href="./_observablehq/stdlib.10504731.js">
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/calculang/calculang@dev/packages/standalone/index.js">
 <link rel="modulepreload" href="./_npm/source-map-js@1.2.1/d84cc5a3.js">
-<link rel="modulepreload" href="./_import/components/editor.7df37247.js">
+<link rel="modulepreload" href="./_import/components/editor.1a6c55d1.js">
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/declann/calculang-js-browser-dev@main/helpers.js">
 <link rel="modulepreload" href="./_import/components/calcuvegadata.f46095cf.js">
 <link rel="modulepreload" href="./_import/components/snippetarray.24a7d79f.js">
@@ -412,8 +412,10 @@ calls_annotations.forEach((d, i) => {
 });
 }});
 
-define({id: "a3f19179", inputs: ["cursor0"], outputs: ["cursor"], body: (cursor0) => {
+define({id: "761f902b", inputs: ["cursor0"], outputs: ["cursor"], body: (cursor0) => {
 const cursor = {...cursor0} // TODO add extra when I do reactive
+
+window.cursor = cursor
 return {cursor};
 }});
 
@@ -468,7 +470,7 @@ return {formula,setFormula};
 }});
 
 define({id: "370e1fe7", inputs: ["Mutable","setModel","setIntrospection","setCompilations","setCursor","setFormula","display"], outputs: ["ab","selection","formulae_visible","hover","set_formulae_visible","set_hover","x"], body: async (Mutable,setModel,setIntrospection,setCompilations,setCursor,setFormula,display) => {
-const {ab} = await import("./_import/components/editor.7df37247.js");
+const {ab} = await import("./_import/components/editor.1a6c55d1.js");
 
 const selection = Mutable({from:{line:1,column:1}, to:{line:1,column:2}})
 
@@ -724,7 +726,7 @@ span.calculang_call {
 <div class="observablehq observablehq--block"><!--:93948b33:--></div>
 <div class="observablehq observablehq--block"><!--:53da6bd4:--></div>
 <div class="observablehq observablehq--block"><!--:186691f5:--></div>
-<div class="observablehq observablehq--block"><!--:a3f19179:--></div>
+<div class="observablehq observablehq--block"><!--:761f902b:--></div>
 <details style="display: none;opacity:0.3; font-size:0.4em"><summary>opts</summary>
 <div class="observablehq observablehq--block"><!--:931a68e0:--></div>
 </details>

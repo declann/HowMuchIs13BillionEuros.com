@@ -207,7 +207,8 @@ setCursor('primary_school_enrolments_in', 558_143);
 
 <style>
 .amount-option {
-  border-bottom: 1px dotted orange;
+  border-bottom: 2px dotted orange;
+  border-bottom-style: dotted;
   padding: 0 0.2em;
   font-style: italic;
   text-wrap: nowrap;
@@ -215,6 +216,7 @@ setCursor('primary_school_enrolments_in', 558_143);
 }
 .selected-amount-option {
     border-bottom: 3px dotted orange;
+  border-bottom-style: dotted;
 
   font-weight: bold;
 }
@@ -232,7 +234,7 @@ html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ir
 ```
 
 
-<span style="padding:1px;font-style:italic; margin-bottom:1em; background: lightgreen">But how much is **€ ${option}Bn** ?</span> 🤯
+<span style="padding:1px;font-style:italic; margin-bottom:1em; /*background: lightgreen*/ font-weight:bold;">But how much is ${draggable_input({input:'amount_in', value: 13_000_000_000, step:10_000_000})} ?</span> 🤯
 
 
 <p style="line-height:1em">
@@ -241,7 +243,7 @@ html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ir
 
 
 
-<h4 style="font-style:italic;  margin-bottom:1em;">€ ${option}Bn is...</h4>
+<h4 style="font-style:italic;  margin-bottom:1em;">${fmt('amount',cursor.amount_in)} is...</h4>
 
 <style>
 .input-scrubbable-number {
