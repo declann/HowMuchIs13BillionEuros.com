@@ -90,7 +90,7 @@
 import {define} from "./_observablehq/client.40bd02be.js";
 import {registerFile} from "./_observablehq/stdlib.10504731.js";
 
-registerFile("./cul/how-much-scrubbable.cul.js", {"name":"./cul/how-much-scrubbable.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much-scrubbable.cul.cd6488b9.js","lastModified":1726173481581,"size":3831});
+registerFile("./cul/how-much-scrubbable.cul.js", {"name":"./cul/how-much-scrubbable.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much-scrubbable.cul.532e24c0.js","lastModified":1726183944793,"size":3730});
 
 define({id: "6f9c26cc", inputs: ["fmt","setCursor"], outputs: ["draggable_input","clamp","makeDraggable"], body: (fmt,setCursor) => {
 function draggable_input({input, value=13, step=1}) {
@@ -767,9 +767,15 @@ fmt('amount',cursor.amount_in)
 ))
 }});
 
-define({id: "5b33c827", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+define({id: "62c9a0db", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
-draggable_input({input:'tablet_cost_in', value:900, step:2})
+draggable_input({input:'national_childrens_hospital_cost_in', value: 2_240_000_000, step:20000000})
+))
+}});
+
+define({id: "ebd4784e", mode: "inline", inputs: ["model","cursor","display"], body: async (model,cursor,display) => {
+display(await(
+new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")
 ))
 }});
 
@@ -782,6 +788,18 @@ draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})
 define({id: "ed2fc5a2-1", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
 draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})
+))
+}});
+
+define({id: "cd3647d8", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+display(await(
+draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})
+))
+}});
+
+define({id: "753ca96f", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+display(await(
+draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})
 ))
 }});
 
@@ -800,30 +818,6 @@ new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️"
 define({id: "25468d34", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
 draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})
-))
-}});
-
-define({id: "cd3647d8", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
-display(await(
-draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})
-))
-}});
-
-define({id: "753ca96f", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
-display(await(
-draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})
-))
-}});
-
-define({id: "f63d4bf4", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
-display(await(
-draggable_input({input:'national_childrens_hospital_cost_in', value: 2_240_000_000, step:10000000})
-))
-}});
-
-define({id: "ebd4784e", mode: "inline", inputs: ["model","cursor","display"], body: async (model,cursor,display) => {
-display(await(
-new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")
 ))
 }});
 
@@ -1131,7 +1125,7 @@ background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:9c39fa93:--></div>
 <p><span style="padding:1px;font-style:italic; margin-bottom:1em; /*background: lightgreen*/ font-weight:bold;">But how much is <observablehq-loading></observablehq-loading><!--:de78b9ae:--> ?</span> 🤯</p>
 <p style="line-height:1em">
-<span style="font-size:0.8em">Check my <i>back of the envelope calculations</i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:2px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
+<span style="font-size:0.8em">Check my <i><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation" target="_blank" rel="noopener noreferrer">back of the envelope calculations</a></i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:2px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
 </p>
 <h4 style="font-style:italic;  margin-bottom:1em;"><observablehq-loading></observablehq-loading><!--:ed01b831:--> is...</h4>
 <style>
@@ -1169,27 +1163,23 @@ p, li, ul {
 }
 </style>
 <div style="margin-left:7px;">
-<p>In <observablehq-loading></observablehq-loading><!--:5b33c827:--> tablet devices❓</p>
+<p>In <observablehq-loading></observablehq-loading><!--:62c9a0db:--> <a href="https://www.irishtimes.com/health/2024/02/13/national-childrens-hospital-cost-rises-to-over-2bn-donnelly-confirms/" target="_blank" rel="noopener noreferrer">National Childrens Hospitals</a>❓</p>
 <ul>
-<li><span class="f tablets_per_person"></span> tablets per person in Ireland, or <span class="f tablets_per_primary_pupil"></span> tablets per primary school pupil 🧒📲</li>
+<li><span class="f national_childrens_hospitals"></span> National Childrens Hospitals <observablehq-loading></observablehq-loading><!--:ebd4784e:-->👧🏻</li>
 </ul>
 <p>In <observablehq-loading></observablehq-loading><!--:ed2fc5a2:--> one-off gifts❓</p>
 <ul>
-<li><span class="f one_off_gifts_per_person"></span>x <observablehq-loading></observablehq-loading><!--:ed2fc5a2-1:--> gifts for each person 🎁</li>
-</ul>
-<p>In <observablehq-loading></observablehq-loading><!--:995d9aab:--> <a href="https://duckduckgo.com/?q=oasis+tickets+croke+park&amp;t=h_&amp;iar=news&amp;ia=news" target="_blank" rel="noopener noreferrer">Oasis tickets</a>❓</p>
-<ul>
-<li><span class="f oasis_tickets_per_person"></span> tickets each for every person! 💃<observablehq-loading></observablehq-loading><!--:32a5c061:-->🕺<div style="height:0.5em"></div></li>
-<li>Oasis might need to play <span class="f oasis_gigs"></span> gigs together in <a href="https://crokepark.ie/stadium/about" target="_blank" rel="noopener noreferrer">Croke Park</a> at <observablehq-loading></observablehq-loading><!--:25468d34:--> capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶</li>
+<li><span class="f one_off_gifts_per_person"></span>x <observablehq-loading></observablehq-loading><!--:ed2fc5a2-1:--> gifts for each person in Ireland 🎁</li>
 </ul>
 <p>In <observablehq-loading></observablehq-loading><!--:cd3647d8:--> <a href="https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/" target="_blank" rel="noopener noreferrer">bike sheds</a>❓</p>
 <ul>
 <li><span class="f bike_sheds"></span> bike sheds 🚴<div style="height:0.5em"></div></li>
 <li>Using <observablehq-loading></observablehq-loading><!--:753ca96f:-->x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴</li>
 </ul>
-<p>In <observablehq-loading></observablehq-loading><!--:f63d4bf4:--> <a href="https://www.irishtimes.com/health/2024/02/13/national-childrens-hospital-cost-rises-to-over-2bn-donnelly-confirms/" target="_blank" rel="noopener noreferrer">National Childrens Hospitals</a>❓</p>
+<p>In <observablehq-loading></observablehq-loading><!--:995d9aab:--> <a href="https://duckduckgo.com/?q=oasis+tickets+croke+park&amp;t=h_&amp;iar=news&amp;ia=news" target="_blank" rel="noopener noreferrer">Oasis tickets</a>❓</p>
 <ul>
-<li><span class="f national_childrens_hospitals"></span> National Childrens Hospitals <observablehq-loading></observablehq-loading><!--:ebd4784e:-->👧🏻</li>
+<li><span class="f oasis_tickets_per_person"></span> tickets each for every person! 💃<observablehq-loading></observablehq-loading><!--:32a5c061:-->🕺<div style="height:0.5em"></div></li>
+<li>Oasis might need to play <span class="f oasis_gigs"></span> gigs together in <a href="https://crokepark.ie/stadium/about" target="_blank" rel="noopener noreferrer">Croke Park</a> at <observablehq-loading></observablehq-loading><!--:25468d34:--> capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶</li>
 </ul>
 <p>In Special Needs Assistants at a salary of <observablehq-loading></observablehq-loading><!--:d6cd2c3c:--> pa❓</p>
 <ul>
@@ -1225,7 +1215,7 @@ p, li, ul {
 }
 </style>
 <div id="calculang-info">
-<p>These <a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation" target="_blank" rel="noopener noreferrer"><i>back-of-the-envelope calculations</i></a> are made using <a href="https://calculang.dev" target="_blank" rel="noopener noreferrer">calculang</a>: a language for calculations for <i>flexibility, transparency, and communication</i> about numbers.</p>
+<p>These <a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation" target="_blank" rel="noopener noreferrer"><i>back-of-the-envelope calculations</i></a> are made using <a href="https://calculang.dev" target="_blank" rel="noopener noreferrer">calculang</a>: a language for calculations for <i>structure, flexibility and communication</i> about numbers.</p>
 <p>You can check (and change!) their formulas and assumptions under the tab for '💬' (top left)</p>
 <p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about" target="_blank" rel="noopener noreferrer">Declan</a>.</i> <strong>Please don't use these numbers for budgetary planning</strong> ⚠️</p>
 <p><a href="https://github.com/declann/howmuchis13billioneuros.com" target="_blank" rel="noopener noreferrer"><img width="25px" height="25px" src="./_file/brand-git.ae3af407.png"></a> <a style="margin-left:12px; border:1px solid lightblue; background: aliceblue; border-radius:2px" href="https://calcwithdec.dev" target="_blank" rel="noopener noreferrer">CalcWithDec.dev</a></p>

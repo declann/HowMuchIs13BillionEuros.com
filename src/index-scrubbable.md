@@ -238,7 +238,7 @@ html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ir
 
 
 <p style="line-height:1em">
-<span style="font-size:0.8em">Check my <i>back of the envelope calculations</i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:2px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
+<span style="font-size:0.8em">Check my <i><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation">back of the envelope calculations</a></i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:2px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
 </p>
 
 
@@ -285,23 +285,19 @@ p, li, ul {
 
 <div style="margin-left:7px;">
 
-In ${draggable_input({input:'tablet_cost_in', value:900, step:2})} tablet devices❓
-
-- <span class="f tablets_per_person"></span> tablets per person in Ireland, or <span class="f tablets_per_primary_pupil"></span> tablets per primary school pupil 🧒📲
+In ${draggable_input({input:'national_childrens_hospital_cost_in', value: 2_240_000_000, step:20000000})} [National Childrens Hospitals](https://www.irishtimes.com/health/2024/02/13/national-childrens-hospital-cost-rises-to-over-2bn-donnelly-confirms/)❓
+  - <span class="f national_childrens_hospitals"></span> National Childrens Hospitals ${new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")}👧🏻
 
 In ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})} one-off gifts❓
-  - <span class="f one_off_gifts_per_person"></span>x ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})} gifts for each person 🎁
-
-In ${draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})} [Oasis tickets](https://duckduckgo.com/?q=oasis+tickets+croke+park&t=h_&iar=news&ia=news)❓
-  - <span class="f oasis_tickets_per_person"></span> tickets each for every person! 💃${new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
-  - Oasis might need to play <span class="f oasis_gigs"></span> gigs together in [Croke Park](https://crokepark.ie/stadium/about) at ${draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})} capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶
+  - <span class="f one_off_gifts_per_person"></span>x ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})} gifts for each person in Ireland 🎁
 
 In ${draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})} [bike sheds](https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/)❓
   - <span class="f bike_sheds"></span> bike sheds 🚴<div style="height:0.5em" />
   - Using ${draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})}x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴
 
-In ${draggable_input({input:'national_childrens_hospital_cost_in', value: 2_240_000_000, step:10000000})} [National Childrens Hospitals](https://www.irishtimes.com/health/2024/02/13/national-childrens-hospital-cost-rises-to-over-2bn-donnelly-confirms/)❓
-  - <span class="f national_childrens_hospitals"></span> National Childrens Hospitals ${new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")}👧🏻
+In ${draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})} [Oasis tickets](https://duckduckgo.com/?q=oasis+tickets+croke+park&t=h_&iar=news&ia=news)❓
+  - <span class="f oasis_tickets_per_person"></span> tickets each for every person! 💃${new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
+  - Oasis might need to play <span class="f oasis_gigs"></span> gigs together in [Croke Park](https://crokepark.ie/stadium/about) at ${draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})} capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶
 
 In Special Needs Assistants at a salary of ${draggable_input({input:'special_needs_assistant_cost_in', value: 34472, step:100})} pa❓
   - <span class="f special_needs_assistants_years"></span> years of salary at this rate ✨
@@ -341,7 +337,7 @@ But for other context, ${draggable_input({input:'amount_in', value: 13_000_000_0
 
 <div id="calculang-info">
 
-<p>These <a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation"><i>back-of-the-envelope calculations</i></a> are made using <a href="https://calculang.dev">calculang</a>: a language for calculations for <i>flexibility, transparency, and communication</i> about numbers.</p>
+<p>These <a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation"><i>back-of-the-envelope calculations</i></a> are made using <a href="https://calculang.dev">calculang</a>: a language for calculations for <i>structure, flexibility and communication</i> about numbers.</p>
 
 You can check (and change!) their formulas and assumptions under the tab for '💬' (top left)
 
