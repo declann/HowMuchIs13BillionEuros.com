@@ -149,6 +149,8 @@ function fmt(formula, v) {
   if (formula == 'national_debt') return '€ ' + d3.format(',.2f')(v/1_000_000_000) + 'Bn';
   if (formula == 'amount_over_national_debt') return d3.format('.1%')(v);
 
+  if (formula == 'population') return d3.format(',.3s')(v);
+
   if (formula == 'bike_shed_bikes') return d3.format(',.0f')(v);
   if (formula == 'bikes_per_bike_shed') return d3.format(',.1f')(v);
 
@@ -165,7 +167,7 @@ function fmt(formula, v) {
   0% { opacity: 0.5;background: #39ff14; }
   50% { background: #39ff14; opacity: 1; }
   80% { } /*dark theme should be black, but minor*/
-  100% { opacity: 0.8; background:transparent }
+  100% { opacity: 0.8; background:aliceblue /* not transparent, so borders never overlap */ }
 }
 
 .introduce {
@@ -204,6 +206,7 @@ setCursor('heat_pump_grant_cost_in', 6500);
 setCursor('house_cost_in', 300000);
 setCursor('house_occupants_in', 2.74);
 setCursor('primary_school_enrolments_in', 558_143);
+setCursor('population_in',5_149_139)
 ```
 
 <style>
@@ -299,14 +302,14 @@ In ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:6})} one-of
 
 In ${draggable_input({input:'house_cost_in', value: 300000, step:1000})} houses❓
   - Fully funded: <span class="f houses"></span> of them 🏡<div style="height:0.5em" />
-  - Using an average occupancy of ${draggable_input({input:'house_occupants_in', value: 2.74, step:.01})} people: enough on it's own to house <span class="f house_pc"></span> of the population
+  - Using an average occupancy of ${draggable_input({input:'house_occupants_in', value: 2.74, step:.01})} people: enough on it's own to house <span class="f house_pc"></span> of the ${draggable_input({input:'population_in', value: 5_149_139, step:1000})} population in Ireland
 
 In ${draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})} [Oasis tickets](https://duckduckgo.com/?q=oasis+tickets+croke+park&t=h_&iar=news&ia=news)❓
   - <span class="f oasis_tickets_per_person"></span> tickets each for every person in Ireland! 💃${model.oasis_tickets_per_person(cursor) == Infinity ? "" : new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
   - Oasis might need to play <span class="f oasis_gigs"></span> gigs together in [Croke Park](https://crokepark.ie/stadium/about) at ${draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})} capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶
 
-In Special Needs Assistants at a salary of ${draggable_input({input:'special_needs_assistant_cost_in', value: 34472, step:100})} pa❓
-  - <span class="f special_needs_assistants_years"></span> years of salary at this rate ✨
+<!--In Special Needs Assistants at a salary of ${draggable_input({input:'special_needs_assistant_cost_in', value: 34472, step:100})} pa❓
+  - <span class="f special_needs_assistants_years"></span> years of salary at this rate ✨-->
 
 In ${draggable_input({input:'heat_pump_grant_cost_in', value: 6500, step:50})} heat pump grants❓
   - <span class="f heat_pump_grants"></span>x ${draggable_input({input:'heat_pump_grant_cost_in', value: 6500, step:100})} heat pump grants 🔥

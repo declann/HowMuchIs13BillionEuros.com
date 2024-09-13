@@ -90,7 +90,7 @@
 import {define} from "./_observablehq/client.40bd02be.js";
 import {registerFile} from "./_observablehq/stdlib.10504731.js";
 
-registerFile("./cul/how-much-scrubbable.cul.js", {"name":"./cul/how-much-scrubbable.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much-scrubbable.cul.8a9dcb3d.js","lastModified":1726218693136,"size":3747});
+registerFile("./cul/how-much-scrubbable.cul.js", {"name":"./cul/how-much-scrubbable.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much-scrubbable.cul.8d5f7c46.js","lastModified":1726221491615,"size":3766});
 
 define({id: "b4e9cabb", inputs: ["fmt","setCursor"], outputs: ["draggable_input","clamp","makeDraggable"], body: (fmt,setCursor) => {
 function draggable_input({input, value=13, step=1}) {
@@ -679,7 +679,7 @@ fns_annotations.forEach(d => {
 
 }});
 
-define({id: "22d60405", inputs: ["d3"], outputs: ["fmt"], body: (d3) => {
+define({id: "fad91e67", inputs: ["d3"], outputs: ["fmt"], body: (d3) => {
 function fmt(formula, v) {
   if (formula == 'tablet_cost') return '€ ' + d3.format(',.0f')(v);
   if (formula == 'tablets_per_person') return d3.format(',.1f')(v);
@@ -712,6 +712,8 @@ function fmt(formula, v) {
   if (formula == 'national_debt') return '€ ' + d3.format(',.2f')(v/1_000_000_000) + 'Bn';
   if (formula == 'amount_over_national_debt') return d3.format('.1%')(v);
 
+  if (formula == 'population') return d3.format(',.3s')(v);
+
   if (formula == 'bike_shed_bikes') return d3.format(',.0f')(v);
   if (formula == 'bikes_per_bike_shed') return d3.format(',.1f')(v);
 
@@ -724,7 +726,7 @@ function fmt(formula, v) {
 return {fmt};
 }});
 
-define({id: "4c4f271f", inputs: ["setCursor"], body: (setCursor) => {
+define({id: "3f38dd5e", inputs: ["setCursor"], body: (setCursor) => {
 // for default values sync here with draggable_input calls (drag uses that value)
 setCursor('amount_in', 13_000_000_000);
 setCursor('tablet_cost_in', 900);
@@ -739,6 +741,7 @@ setCursor('heat_pump_grant_cost_in', 6500);
 setCursor('house_cost_in', 300000);
 setCursor('house_occupants_in', 2.74);
 setCursor('primary_school_enrolments_in', 558_143);
+setCursor('population_in',5_149_139)
 }});
 
 define({id: "96ed5b9b", inputs: ["Mutable"], outputs: ["option","setOption"], body: (Mutable) => {
@@ -809,6 +812,12 @@ draggable_input({input:'house_occupants_in', value: 2.74, step:.01})
 ))
 }});
 
+define({id: "0735b20d", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+display(await(
+draggable_input({input:'population_in', value: 5_149_139, step:1000})
+))
+}});
+
 define({id: "995d9aab", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
 draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})
@@ -824,12 +833,6 @@ model.oasis_tickets_per_person(cursor) == Infinity ? "" : new Array(Math.floor(m
 define({id: "25468d34", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
 draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})
-))
-}});
-
-define({id: "d6cd2c3c", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
-display(await(
-draggable_input({input:'special_needs_assistant_cost_in', value: 34472, step:100})
 ))
 }});
 
@@ -1071,13 +1074,13 @@ background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
 <div class="observablehq observablehq--block"><!--:9bf51115:--></div>
 <div style="padding:10px; background: aliceblue; border: 1px solid black; border-radius: 20px; margin: 10px; max-width: unset" id="main">
 <div class="observablehq observablehq--block"><!--:eb5cdac5:--></div>
-<div class="observablehq observablehq--block"><!--:22d60405:--></div>
+<div class="observablehq observablehq--block"><!--:fad91e67:--></div>
 <style>
 @keyframes fadeIn {
   0% { opacity: 0.5;background: #39ff14; }
   50% { background: #39ff14; opacity: 1; }
   80% { } /*dark theme should be black, but minor*/
-  100% { opacity: 0.8; background:transparent }
+  100% { opacity: 0.8; background:aliceblue /* not transparent, so borders never overlap */ }
 }
 
 .introduce {
@@ -1099,7 +1102,7 @@ background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
   text-wrap: nowrap;
   }
 </style>
-<div class="observablehq observablehq--block"><!--:4c4f271f:--></div>
+<div class="observablehq observablehq--block"><!--:3f38dd5e:--></div>
 <style>
 .amount-option {
   border-bottom: 2px dotted orange;
@@ -1175,17 +1178,15 @@ p, li, ul {
 <p>In <observablehq-loading></observablehq-loading><!--:dd9050c4:--> houses❓</p>
 <ul>
 <li>Fully funded: <span class="f houses"></span> of them 🏡<div style="height:0.5em"></div></li>
-<li>Using an average occupancy of <observablehq-loading></observablehq-loading><!--:94adfe47:--> people: enough on it's own to house <span class="f house_pc"></span> of the population</li>
+<li>Using an average occupancy of <observablehq-loading></observablehq-loading><!--:94adfe47:--> people: enough on it's own to house <span class="f house_pc"></span> of the <observablehq-loading></observablehq-loading><!--:0735b20d:--> population in Ireland</li>
 </ul>
 <p>In <observablehq-loading></observablehq-loading><!--:995d9aab:--> <a href="https://duckduckgo.com/?q=oasis+tickets+croke+park&amp;t=h_&amp;iar=news&amp;ia=news" target="_blank" rel="noopener noreferrer">Oasis tickets</a>❓</p>
 <ul>
 <li><span class="f oasis_tickets_per_person"></span> tickets each for every person in Ireland! 💃<observablehq-loading></observablehq-loading><!--:38a445b5:-->🕺<div style="height:0.5em"></div></li>
 <li>Oasis might need to play <span class="f oasis_gigs"></span> gigs together in <a href="https://crokepark.ie/stadium/about" target="_blank" rel="noopener noreferrer">Croke Park</a> at <observablehq-loading></observablehq-loading><!--:25468d34:--> capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶</li>
 </ul>
-<p>In Special Needs Assistants at a salary of <observablehq-loading></observablehq-loading><!--:d6cd2c3c:--> pa❓</p>
-<ul>
-<li><span class="f special_needs_assistants_years"></span> years of salary at this rate ✨</li>
-</ul>
+<!--In Special Needs Assistants at a salary of ${draggable_input({input:'special_needs_assistant_cost_in', value: 34472, step:100})} pa❓
+  - <span class="f special_needs_assistants_years"></span> years of salary at this rate ✨-->
 <p>In <observablehq-loading></observablehq-loading><!--:0c72413b:--> heat pump grants❓</p>
 <ul>
 <li><span class="f heat_pump_grants"></span>x <observablehq-loading></observablehq-loading><!--:04448e32:--> heat pump grants 🔥</li>
