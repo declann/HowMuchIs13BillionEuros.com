@@ -3,6 +3,6 @@ title: redirect
 sidebar: false
 ---
 
-Scrubbable has landed, Go to [index](./index.md)
+Scrubbable has landed, Go to [index](./index)
 
-For the pre-scrubbable version, go to [index-original](./index-original.md)
+For the pre-scrubbable version, go to [index-original](./index-original)
