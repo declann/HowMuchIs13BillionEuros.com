@@ -5,7 +5,7 @@
   "scripts": {
     "fixCMView": "sed -i -e 's/1e3\\/2/1e5\\/2/g' src/.observablehq/cache/_node/@codemirror/view@6.33.0/index.js",
     "clean": "rimraf docs/.observablehq/cache",
-    "build": "npm run fixCMView && rimraf dist && observable build && sed -i '/crossorigin/d' ./dist/index.html && cp ./preview.png ./dist",
+    "build": "npm run fixCMView && rimraf dist && observable build && sed -i '/crossorigin/d' ./dist/index.html && sed -i '/crossorigin/d' ./dist/index-original.html && cp ./preview.png ./dist",
     "dev": "observable preview",
     "deploy": "observable deploy",
     "observable": "observable"
