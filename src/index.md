@@ -349,7 +349,7 @@ You can check (and change!) their formulas under the tab for '💬' (top left)
 
 <p><strong>"Scrubbable numbers"</strong> as an interaction technique for models - inside narrative text, is something championed by <a href="https://worrydream.com/">Bret Victor</a>. I recommend his other work: especially the <a href="https://worrydream.com/ClimateChange/#media-debate">Model-driven debate</a> section of his <a href="https://worrydream.com/ClimateChange/">climate essay</a>, to find further neat interactions with models and their calculations.</p>
 
-<p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about">Declan</a>.</i> <strong>Please don't use these numbers for decision making</strong> ⚠️🙂</p>
+<p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about">Declan</a>.</i> <strong>Please don't use these numbers for real decision making</strong> ⚠️🙂</p>
 
 <a href="https://github.com/declann/howmuchis13billioneuros.com"><img width="25px" height="25px" src="./brand-git.png" /></a> <a style="font-weight: bold; margin-left:12px; border:1px solid lightblue; background: aliceblue; border-radius:2px; padding: 4px" href="https://calcwithdec.dev">CalcWithDec.dev</a>
 
