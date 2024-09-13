@@ -347,7 +347,7 @@ But **for other context**, ${draggable_input({input:'amount_in', value: 13_000_0
 You can check (and change!) their formulas under the tab for '💬' (top left)
 
 
-<p><strong>"Scrubbable numbers"</strong> as an interaction technique for models - inside narrative text, is something championed by <a href="https://worrydream.com/">Bret Victor</a>. I recommend reading the <a href="https://worrydream.com/ClimateChange/#media-debate">Model-driven debate</a> section of his <a href="https://worrydream.com/ClimateChange/">climate essay</a> for further nice interactions with models and their calculations.</p>
+<p><strong>"Scrubbable numbers"</strong> as an interaction technique for models - inside narrative text, is something championed by <a href="https://worrydream.com/">Bret Victor</a>. I recommend his other work: especially the <a href="https://worrydream.com/ClimateChange/#media-debate">Model-driven debate</a> section of his <a href="https://worrydream.com/ClimateChange/">climate essay</a>, to find further neat interactions with models and their calculations.</p>
 
 <p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about">Declan</a>.</i> <strong>Please don't use these numbers for decision making</strong> ⚠️</p>
 
