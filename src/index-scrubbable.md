@@ -1,5 +1,6 @@
 ---
 title: redirect
+sidebar: false
 ---
 
 Scrubbable has landed, Go to [index](./index.md)
