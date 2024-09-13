@@ -240,7 +240,7 @@ html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ir
 
 
 <p style="line-height:1em; border: 1px solid lightgrey; padding:3px; background: lightyellow; display:inline-block">
-<span style="font-size:0.8em">Check my <i><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation">back of the envelope calculations</a></i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:0px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
+<span style="font-size:0.8em">Check my <i><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation">back of the envelope calculations</a></i> and - if you want to - <strong>make them your own</strong> by dragging <span class="input f" style="padding:0px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
 </p>
 
 
@@ -341,13 +341,17 @@ But **for other context**, ${draggable_input({input:'amount_in', value: 13_000_0
 
 <p>These <a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation"><i>back-of-the-envelope calculations</i></a> are made using <a href="https://calculang.dev">calculang</a>: a language for calculations for <i>structure, flexibility and communication</i> about numbers.</p>
 
-You can check (and change!) their formulas and assumptions under the tab for '💬' (top left)
+You can check (and change!) their formulas under the tab for '💬' (top left)
 
 <p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about">Declan</a>.</i> <strong>Please don't use these numbers for budgetary planning</strong> ⚠️</p>
 
+<p><strong>"Scrubbable numbers"</strong> as an interaction technique for models is something I first saw championed by <a href="https://worrydream.com/">Bret Victor</a>. I highly recommend reading the <a href="https://worrydream.com/ClimateChange/#media-debate">Model-driven debate</a> section of his <a href="https://worrydream.com/ClimateChange/">climate essay</a>.</p>
+
 <a href="https://github.com/declann/howmuchis13billioneuros.com"><img width="25px" height="25px" src="./brand-git.png" /></a> <a style="margin-left:12px; border:1px solid lightblue; background: aliceblue; border-radius:2px" href="https://calcwithdec.dev">CalcWithDec.dev</a>
 
+
 </div>
+
 
 ```js
 await x.setFS({
