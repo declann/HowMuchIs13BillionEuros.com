@@ -235,7 +235,7 @@ function setOption(v) {
 ```
 
 ```js
-html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ireland&iar=news&ia=news">a lot of chatter</a></strong> in the Irish news about <a onclick=${() => {setCursor('amount_in', 1.3e10); setOption(13)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.3e10)<1?"selected-amount-option" : ""}">13 Billion euros</span></a> or <a onclick=${() => {setCursor('amount_in', 1.4e10); setOption(14)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.4e10)<1?"selected-amount-option" : ""}">14 Billion euros</span></a>.`
+html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ireland&iar=news&ia=news">a lot of chatter</a></strong> in the Irish news about <a onclick=${() => {setCursor('amount_in', 1.3e10); setOption(13)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.3e10)<1?"selected-amount-option" : ""}">13 Billion euros</span></a> or <a onclick=${() => {setCursor('amount_in', 1.4e10); setOption(14)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.4e10)<1?"selected-amount-option" : ""}">14 Billion euros</span></a>`
 ```
 
 
@@ -318,7 +318,7 @@ In ${draggable_input({input:'heat_pump_grant_cost_in', value: 6500, step:50})} h
 
 <span style="font-style:italic; margin: 0 0; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</span>
 
-But **for other context**, ${draggable_input({input:'amount_in', value: 13_000_000_000, step:10_000_000})} is <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> [total expenditure in 2023](https://whereyourmoneygoes.gov.ie/en/2023/), and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt. <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. -->
+But **for other context**, this ${draggable_input({input:'amount_in', value: 13_000_000_000, step:10_000_000})} is <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> [total expenditure in 2023](https://whereyourmoneygoes.gov.ie/en/2023/), and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt. <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. -->
 
 🤷
 
@@ -349,7 +349,7 @@ You can check (and change!) their formulas under the tab for '💬' (top left)
 
 <p><strong>"Scrubbable numbers"</strong> as an interaction technique for models - inside narrative text, is something championed by <a href="https://worrydream.com/">Bret Victor</a>. I recommend his other work: especially the <a href="https://worrydream.com/ClimateChange/#media-debate">Model-driven debate</a> section of his <a href="https://worrydream.com/ClimateChange/">climate essay</a>, to find further neat interactions with models and their calculations.</p>
 
-<p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about">Declan</a>.</i> <strong>Please don't use these numbers for decision making</strong> ⚠️</p>
+<p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about">Declan</a>.</i> <strong>Please don't use these numbers for decision making</strong> ⚠️🙂</p>
 
 <a href="https://github.com/declann/howmuchis13billioneuros.com"><img width="25px" height="25px" src="./brand-git.png" /></a> <a style="font-weight: bold; margin-left:12px; border:1px solid lightblue; background: aliceblue; border-radius:2px; padding: 4px" href="https://calcwithdec.dev">CalcWithDec.dev</a>
 

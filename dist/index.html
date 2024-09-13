@@ -749,9 +749,9 @@ function setOption(v) {
 return {option,setOption};
 }});
 
-define({id: "9c39fa93", inputs: ["html","setCursor","setOption","cursor","display"], body: async (html,setCursor,setOption,cursor,display) => {
+define({id: "e0e77d7f", inputs: ["html","setCursor","setOption","cursor","display"], body: async (html,setCursor,setOption,cursor,display) => {
 display(await(
-html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ireland&iar=news&ia=news">a lot of chatter</a></strong> in the Irish news about <a onclick=${() => {setCursor('amount_in', 1.3e10); setOption(13)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.3e10)<1?"selected-amount-option" : ""}">13 Billion euros</span></a> or <a onclick=${() => {setCursor('amount_in', 1.4e10); setOption(14)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.4e10)<1?"selected-amount-option" : ""}">14 Billion euros</span></a>.`
+html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ireland&iar=news&ia=news">a lot of chatter</a></strong> in the Irish news about <a onclick=${() => {setCursor('amount_in', 1.3e10); setOption(13)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.3e10)<1?"selected-amount-option" : ""}">13 Billion euros</span></a> or <a onclick=${() => {setCursor('amount_in', 1.4e10); setOption(14)}}><span class="amount-option ${Math.abs(cursor.amount_in-1.4e10)<1?"selected-amount-option" : ""}">14 Billion euros</span></a>`
 ))
 }});
 
@@ -1118,7 +1118,7 @@ background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
 }
 </style>
 <div class="observablehq observablehq--block"><!--:96ed5b9b:--></div>
-<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:9c39fa93:--></div>
+<div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:e0e77d7f:--></div>
 <p><span style="padding:1px;font-style:italic; margin-bottom:1em; /*background: lightgreen*/ font-weight:bold;">But how much is <observablehq-loading></observablehq-loading><!--:de78b9ae:--> ?</span> 🤯</p>
 <p style="line-height:1em; border: 1px solid lightgrey; padding:3px; background: lightyellow; display:inline-block">
 <span style="font-size:0.8em">Check my <i><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation" target="_blank" rel="noopener noreferrer">back of the envelope calculations</a></i> and - if you want to - <strong>make them your own</strong> by dragging <span class="input f" style="padding:0px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
@@ -1190,7 +1190,7 @@ p, li, ul {
 </ul>
 </div>
 <p><span style="font-style:italic; margin: 0 0; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</span></p>
-<p>But <strong>for other context</strong>, <observablehq-loading></observablehq-loading><!--:de78b9ae-1:--> is <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> <a href="https://whereyourmoneygoes.gov.ie/en/2023/" target="_blank" rel="noopener noreferrer">total expenditure in 2023</a>, and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt. <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. --></p>
+<p>But <strong>for other context</strong>, this <observablehq-loading></observablehq-loading><!--:de78b9ae-1:--> is <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> <a href="https://whereyourmoneygoes.gov.ie/en/2023/" target="_blank" rel="noopener noreferrer">total expenditure in 2023</a>, and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt. <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. --></p>
 <p>🤷</p>
 </div>
 <style>
@@ -1212,7 +1212,7 @@ p, li, ul {
 <p>These <a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation" target="_blank" rel="noopener noreferrer"><i>back-of-the-envelope calculations</i></a> are made using <a href="https://calculang.dev" target="_blank" rel="noopener noreferrer">calculang</a>: a language for calculations for <i>structure, flexibility and communication</i> about numbers.</p>
 <p>You can check (and change!) their formulas under the tab for '💬' (top left)</p>
 <p><strong>"Scrubbable numbers"</strong> as an interaction technique for models - inside narrative text, is something championed by <a href="https://worrydream.com/" target="_blank" rel="noopener noreferrer">Bret Victor</a>. I recommend his other work: especially the <a href="https://worrydream.com/ClimateChange/#media-debate" target="_blank" rel="noopener noreferrer">Model-driven debate</a> section of his <a href="https://worrydream.com/ClimateChange/" target="_blank" rel="noopener noreferrer">climate essay</a>, to find further neat interactions with models and their calculations.</p>
-<p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about" target="_blank" rel="noopener noreferrer">Declan</a>.</i> <strong>Please don't use these numbers for decision making</strong> ⚠️</p>
+<p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about" target="_blank" rel="noopener noreferrer">Declan</a>.</i> <strong>Please don't use these numbers for decision making</strong> ⚠️🙂</p>
 <p><a href="https://github.com/declann/howmuchis13billioneuros.com" target="_blank" rel="noopener noreferrer"><img width="25px" height="25px" src="./_file/brand-git.ae3af407.png"></a> <a style="font-weight: bold; margin-left:12px; border:1px solid lightblue; background: aliceblue; border-radius:2px; padding: 4px" href="https://calcwithdec.dev" target="_blank" rel="noopener noreferrer">CalcWithDec.dev</a></p>
 </div>
 <div class="observablehq observablehq--block"><!--:2d2fdab5:--></div>
