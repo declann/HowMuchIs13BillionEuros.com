@@ -141,7 +141,7 @@ function fmt(formula, v) {
   if (formula == 'houses') return d3.format(',.0f')(v);
 
   if (formula == 'house_occupants') return d3.format(',.2f')(v);
-  if (formula == 'house_pc') return d3.format('.1%')(v);
+  if (formula == 'house_pc') return d3.format('.2%')(v);
   if (formula == 'amount_over_tax_revenue_2023') return d3.format('.1%')(v);
   if (formula == 'amount_over_total_expenditure_2023') return d3.format('.1%')(v);
   if (formula == 'tax_revenue_2023') return '€ ' + d3.format(',.2f')(v/1_000_000_000) + 'Bn';
@@ -302,7 +302,7 @@ In ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:6})} one-of
 
 In ${draggable_input({input:'house_cost_in', value: 300000, step:1000})} houses❓
   - Fully funded: <span class="f houses"></span> of them 🏡<div style="height:0.5em" />
-  - Using an average occupancy of ${draggable_input({input:'house_occupants_in', value: 2.74, step:.01})} people: enough on it's own to house <span class="f house_pc"></span> of the ${draggable_input({input:'population_in', value: 5_149_139, step:1000})} population in Ireland
+  - Using an average occupancy of ${draggable_input({input:'house_occupants_in', value: 2.74, step:.01})} people: enough on it's own to house <span class="f house_pc"></span> of a ${draggable_input({input:'population_in', value: 5_149_139, step:10000})} population
 
 In ${draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})} [Oasis tickets](https://duckduckgo.com/?q=oasis+tickets+croke+park&t=h_&iar=news&ia=news)❓
   - <span class="f oasis_tickets_per_person"></span> tickets each for every person in Ireland! 💃${model.oasis_tickets_per_person(cursor) == Infinity ? "" : new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
@@ -346,11 +346,12 @@ But **for other context**, ${draggable_input({input:'amount_in', value: 13_000_0
 
 You can check (and change!) their formulas under the tab for '💬' (top left)
 
-<p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about">Declan</a>.</i> <strong>Please don't use these numbers for budgetary planning</strong> ⚠️</p>
 
-<p><strong>"Scrubbable numbers"</strong> as an interaction technique for models is something I first saw championed by <a href="https://worrydream.com/">Bret Victor</a>. I highly recommend reading the <a href="https://worrydream.com/ClimateChange/#media-debate">Model-driven debate</a> section of his <a href="https://worrydream.com/ClimateChange/">climate essay</a>.</p>
+<p><strong>"Scrubbable numbers"</strong> as an interaction technique for models - inside narrative text, is something first championed by <a href="https://worrydream.com/">Bret Victor</a>. I recommend reading the <a href="https://worrydream.com/ClimateChange/#media-debate">Model-driven debate</a> section of his <a href="https://worrydream.com/ClimateChange/">climate essay</a>.</p>
 
-<a href="https://github.com/declann/howmuchis13billioneuros.com"><img width="25px" height="25px" src="./brand-git.png" /></a> <a style="margin-left:12px; border:1px solid lightblue; background: aliceblue; border-radius:2px" href="https://calcwithdec.dev">CalcWithDec.dev</a>
+<p><i>This was a little, hurried exercise by <a href="https://calcwithdec.dev/about">Declan</a>.</i> <strong>Please don't use these numbers for decision making</strong> ⚠️</p>
+
+<a href="https://github.com/declann/howmuchis13billioneuros.com"><img width="25px" height="25px" src="./brand-git.png" /></a> <a style="margin-left:12px; border:1px solid lightblue; background: aliceblue; border-radius:2px; padding: 4px" href="https://calcwithdec.dev">CalcWithDec.dev</a>
 
 
 </div>
