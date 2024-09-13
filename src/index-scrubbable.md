@@ -42,7 +42,7 @@ function draggable_input({input, value=13, step=1}) {
         // y value. The x value gets turned into the
         // number.
         //el.value = el.valueAsNumber = Math.round(clamp(p.x, 0, 1000));
-        el.dataset.value = /*Math.round(*//*p.dx*step+p.oldx*/p.x*step//)//Math.round(clamp(p.x, 0, 1000));
+        el.dataset.value = /*Math.round(*//*p.dx*step+p.oldx*/Math.max(p.x*step,0)//)//Math.round(clamp(p.x, 0, 1000));
         el.textContent = fmt(ff, el.dataset.value)
     },
   }
@@ -122,7 +122,7 @@ function fmt(formula, v) {
   if (formula == 'tablets_per_person') return d3.format(',.1f')(v);
   if (formula == 'tablets_per_primary_pupil') return d3.format(',.1f')(v);
   if (formula == 'one_off_gift_cost') return '€ ' + d3.format(',.0f')(v);
-  if (formula == 'one_off_gifts_per_person') return d3.format(',.1f')(v);
+  if (formula == 'one_off_gifts_per_person') return d3.format(',.2f')(v);
   if (formula == 'oasis_tickets_cost') return '€ ' + d3.format(',.0f')(v);
 
   if (formula == 'oasis_tickets_per_person') return d3.format(',.1f')(v);
@@ -162,8 +162,8 @@ function fmt(formula, v) {
 
 <style>
 @keyframes fadeIn {
-  0% { opacity: 0.5;background: aqua; }
-  50% { background: aqua; opacity: 1; }
+  0% { opacity: 0.5;background: #39ff14; }
+  50% { background: #39ff14; opacity: 1; }
   80% { } /*dark theme should be black, but minor*/
   100% { opacity: 0.8; background:transparent }
 }
@@ -180,8 +180,9 @@ function fmt(formula, v) {
 
 .f {
   font-weight: bold;
+  border: 1px solid lightgrey;
   padding: 4px;
-  border-radius:3px;
+  border-radius:5px;
   /*overflow-wrap: break-word*/
   text-wrap: nowrap;
   }
@@ -212,7 +213,8 @@ setCursor('primary_school_enrolments_in', 558_143);
   padding: 0 0.2em;
   font-style: italic;
   text-wrap: nowrap;
-  color: #0a008b
+  color: #0a008b;
+  cursor: pointer;
 }
 .selected-amount-option {
     border-bottom: 3px dotted orange;
@@ -237,13 +239,13 @@ html`There's been a <strong><a href="https://duckduckgo.com/?t=h_&q=apple+tax+ir
 <span style="padding:1px;font-style:italic; margin-bottom:1em; /*background: lightgreen*/ font-weight:bold;">But how much is ${draggable_input({input:'amount_in', value: 13_000_000_000, step:10_000_000})} ?</span> 🤯
 
 
-<p style="line-height:1em">
-<span style="font-size:0.8em">Check my <i><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation">back of the envelope calculations</a></i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:2px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
+<p style="line-height:1em; border: 1px solid lightgrey; padding:3px; background: lightyellow; display:inline-block">
+<span style="font-size:0.8em">Check my <i><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation">back of the envelope calculations</a></i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:0px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
 </p>
 
 
 
-<h4 style="font-style:italic;  margin-bottom:1em;">${fmt('amount',cursor.amount_in)} is...</h4>
+<!--<h4 style="font-style:italic;  margin-bottom:1em;">${fmt('amount',cursor.amount_in)} is...</h4>-->
 
 <style>
 .input-scrubbable-number {
@@ -286,7 +288,11 @@ p, li, ul {
 <div style="margin-left:7px;">
 
 In ${draggable_input({input:'national_childrens_hospital_cost_in', value: 2_240_000_000, step:20000000})} [National Childrens Hospitals](https://www.irishtimes.com/health/2024/02/13/national-childrens-hospital-cost-rises-to-over-2bn-donnelly-confirms/)❓
-  - <span class="f national_childrens_hospitals"></span> National Childrens Hospitals ${new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")}👧🏻
+  - <span class="f national_childrens_hospitals"></span> National Childrens Hospitals ${model.national_childrens_hospitals(cursor) ==Infinity ? "" : new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")}👧🏻
+
+In ${draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})} [bike sheds](https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/)❓
+  - <span class="f bike_sheds"></span> bike sheds 🚴<div style="height:0.5em" />
+  - Using ${draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})}x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴
 
 In ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:6})} one-off gifts❓
   - <span class="f one_off_gifts_per_person"></span>x ${draggable_input({input:'one_off_gift_cost_in', value:2000, step:3})} gifts for each person in Ireland 🎁
@@ -296,12 +302,8 @@ In ${draggable_input({input:'house_cost_in', value: 300000, step:1000})} houses�
   - Using an average occupancy of ${draggable_input({input:'house_occupants_in', value: 2.74, step:.01})} people: enough on it's own to house <span class="f house_pc"></span> of the population
 
 In ${draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})} [Oasis tickets](https://duckduckgo.com/?q=oasis+tickets+croke+park&t=h_&iar=news&ia=news)❓
-  - <span class="f oasis_tickets_per_person"></span> tickets each for every person in Ireland! 💃${new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
+  - <span class="f oasis_tickets_per_person"></span> tickets each for every person in Ireland! 💃${model.oasis_tickets_per_person(cursor) == Infinity ? "" : new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")}🕺<div style="height:0.5em" />
   - Oasis might need to play <span class="f oasis_gigs"></span> gigs together in [Croke Park](https://crokepark.ie/stadium/about) at ${draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})} capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶
-
-In ${draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})} [bike sheds](https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/)❓
-  - <span class="f bike_sheds"></span> bike sheds 🚴<div style="height:0.5em" />
-  - Using ${draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})}x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴
 
 In Special Needs Assistants at a salary of ${draggable_input({input:'special_needs_assistant_cost_in', value: 34472, step:100})} pa❓
   - <span class="f special_needs_assistants_years"></span> years of salary at this rate ✨
@@ -311,9 +313,9 @@ In ${draggable_input({input:'heat_pump_grant_cost_in', value: 6500, step:50})} h
 
 </div>
 
-<h2 style="font-style:italic; margin: 0 0; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</h2>
+<span style="font-style:italic; margin: 0 0; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</span>
 
-But for other context, ${draggable_input({input:'amount_in', value: 13_000_000_000, step:10_000_000})} is <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> [total expenditure in 2023](https://whereyourmoneygoes.gov.ie/en/2023/), and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. -->.
+But **for other context**, ${draggable_input({input:'amount_in', value: 13_000_000_000, step:10_000_000})} is <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> [total expenditure in 2023](https://whereyourmoneygoes.gov.ie/en/2023/), and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt. <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. -->
 
 🤷
 

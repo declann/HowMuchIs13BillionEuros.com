@@ -23,7 +23,7 @@ label[for="module-relationships"], label[for="input-tab"], label[for="minimize-t
 }
 
 label[for="minimize-tab"] {
-  display: none;
+  /*display: none;*/
 }
 
 .box-1 {

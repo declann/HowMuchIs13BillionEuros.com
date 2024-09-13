@@ -4,8 +4,6 @@
 
 
 // formulas:
-export const tablets_per_person = () => amount() / tablet_cost() / population()
-export const tablets_per_primary_pupil = () => amount() / tablet_cost() / primary_school_enrolments()
 export const one_off_gifts_per_person = () => amount() / one_off_gift_cost() / population();
 export const oasis_tickets_per_person = () => amount() / oasis_tickets_cost() / population();
 export const oasis_gigs = () => oasis_tickets_per_person() * population() / croke_park_capacity()
@@ -28,7 +26,6 @@ export const amount_over_total_expenditure_2023 = () => amount() / total_expendi
 export const population = () => 5_149_139; // population of ROI from census: https://www.cso.ie/en/releasesandpublications/ep/p-cpsr/censusofpopulation2022-summaryresults/keyfindings/#:~:text=There%20were%205%2C149%2C139%20people%20in,a%2063%25%20increase%20from%202016.
 export const national_debt = () => 201_970_000_000 // https://www.ntma.ie/uploads/general/Composition-of-Debt-Aug-2024-excel-download.xlsx
 export const total_expenditure_2023 = () => 102_500_000_000 // https://whereyourmoneygoes.gov.ie/en/2023/
-export const primary_school_enrolments = () => 558_143 // primary_school_enrolments_in// 558_143 // at census time 30 September 2022, https://assets.gov.ie/263000/f2932136-6191-4e56-9af0-5b315e85702f.pdf
 
 // inputs:
 
@@ -36,7 +33,6 @@ export const primary_school_enrolments = () => 558_143 // primary_school_enrolme
 export const amount = () => amount_in;
 
 // costs
-export const tablet_cost = () => tablet_cost_in;
 export const one_off_gift_cost = () => one_off_gift_cost_in
 export const oasis_tickets_cost = () => oasis_tickets_cost_in // 347 "average" by aib https://www.independent.ie/business/irish/oasis-fans-spend-average-of-347-on-tickets-aib/a1872859883.html
 export const bike_shed_cost = () => bike_shed_cost_in // 336k: https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/
@@ -49,3 +45,11 @@ export const house_cost = () => house_cost_in
 export const croke_park_capacity = () => croke_park_capacity_in; // 82.3k https://crokepark.ie/stadium/about
 export const house_occupants = () => house_occupants_in // 2.74; // CSO "In 2022, there were on average 2.74 people per private household" https://www.cso.ie/en/releasesandpublications/ep/p-cpsr/censusofpopulation2022-summaryresults/householdsizeandmaritalstatus/
 export const bikes_per_bike_shed = () => bikes_per_bike_shed_in; // 18 ""
+
+
+/*
+export const tablets_per_person = () => amount() / tablet_cost() / population()
+export const tablets_per_primary_pupil = () => amount() / tablet_cost() / primary_school_enrolments()
+export const primary_school_enrolments = () => 558_143 // primary_school_enrolments_in// 558_143 // at census time 30 September 2022, https://assets.gov.ie/263000/f2932136-6191-4e56-9af0-5b315e85702f.pdf
+export const tablet_cost = () => tablet_cost_in;
+*/

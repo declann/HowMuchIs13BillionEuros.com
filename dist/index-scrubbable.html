@@ -5,10 +5,10 @@
 <title>How much is 13 billion euros? Scrubbable experiment | How much is 13 billion euros?</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="preload" as="style" href="./_import/layout-styles.8f813532.css">
+<link rel="preload" as="style" href="./_import/layout-styles.22cda609.css">
 <link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
-<link rel="stylesheet" type="text/css" href="./_import/layout-styles.8f813532.css">
+<link rel="stylesheet" type="text/css" href="./_import/layout-styles.22cda609.css">
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
 <link rel="modulepreload" href="./_observablehq/client.40bd02be.js">
 <link rel="modulepreload" href="./_observablehq/runtime.62b61640.js">
@@ -90,9 +90,9 @@
 import {define} from "./_observablehq/client.40bd02be.js";
 import {registerFile} from "./_observablehq/stdlib.10504731.js";
 
-registerFile("./cul/how-much-scrubbable.cul.js", {"name":"./cul/how-much-scrubbable.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much-scrubbable.cul.fea5e4d7.js","lastModified":1726184452220,"size":3739});
+registerFile("./cul/how-much-scrubbable.cul.js", {"name":"./cul/how-much-scrubbable.cul.js","mimeType":"text/javascript","path":"./_file/cul/how-much-scrubbable.cul.8a9dcb3d.js","lastModified":1726218693136,"size":3747});
 
-define({id: "6f9c26cc", inputs: ["fmt","setCursor"], outputs: ["draggable_input","clamp","makeDraggable"], body: (fmt,setCursor) => {
+define({id: "b4e9cabb", inputs: ["fmt","setCursor"], outputs: ["draggable_input","clamp","makeDraggable"], body: (fmt,setCursor) => {
 function draggable_input({input, value=13, step=1}) {
   const ff = input.slice(0,-3)
   const el = document.createElement('span')
@@ -128,7 +128,7 @@ function draggable_input({input, value=13, step=1}) {
         // y value. The x value gets turned into the
         // number.
         //el.value = el.valueAsNumber = Math.round(clamp(p.x, 0, 1000));
-        el.dataset.value = /*Math.round(*//*p.dx*step+p.oldx*/p.x*step//)//Math.round(clamp(p.x, 0, 1000));
+        el.dataset.value = /*Math.round(*//*p.dx*step+p.oldx*/Math.max(p.x*step,0)//)//Math.round(clamp(p.x, 0, 1000));
         el.textContent = fmt(ff, el.dataset.value)
     },
   }
@@ -679,13 +679,13 @@ fns_annotations.forEach(d => {
 
 }});
 
-define({id: "023a3a57", inputs: ["d3"], outputs: ["fmt"], body: (d3) => {
+define({id: "22d60405", inputs: ["d3"], outputs: ["fmt"], body: (d3) => {
 function fmt(formula, v) {
   if (formula == 'tablet_cost') return '€ ' + d3.format(',.0f')(v);
   if (formula == 'tablets_per_person') return d3.format(',.1f')(v);
   if (formula == 'tablets_per_primary_pupil') return d3.format(',.1f')(v);
   if (formula == 'one_off_gift_cost') return '€ ' + d3.format(',.0f')(v);
-  if (formula == 'one_off_gifts_per_person') return d3.format(',.1f')(v);
+  if (formula == 'one_off_gifts_per_person') return d3.format(',.2f')(v);
   if (formula == 'oasis_tickets_cost') return '€ ' + d3.format(',.0f')(v);
 
   if (formula == 'oasis_tickets_per_person') return d3.format(',.1f')(v);
@@ -761,21 +761,27 @@ draggable_input({input:'amount_in', value: 13_000_000_000, step:10_000_000})
 ))
 }});
 
-define({id: "ed01b831", mode: "inline", inputs: ["fmt","cursor","display"], body: async (fmt,cursor,display) => {
-display(await(
-fmt('amount',cursor.amount_in)
-))
-}});
-
 define({id: "62c9a0db", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
 draggable_input({input:'national_childrens_hospital_cost_in', value: 2_240_000_000, step:20000000})
 ))
 }});
 
-define({id: "ebd4784e", mode: "inline", inputs: ["model","cursor","display"], body: async (model,cursor,display) => {
+define({id: "76dbd951", mode: "inline", inputs: ["model","cursor","display"], body: async (model,cursor,display) => {
 display(await(
-new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")
+model.national_childrens_hospitals(cursor) ==Infinity ? "" : new Array(Math.floor(model.national_childrens_hospitals(cursor)) + 1).join("🏥")
+))
+}});
+
+define({id: "cd3647d8", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+display(await(
+draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})
+))
+}});
+
+define({id: "753ca96f", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
+display(await(
+draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})
 ))
 }});
 
@@ -809,27 +815,15 @@ draggable_input({input:'oasis_tickets_cost_in', value: 347, step:1})
 ))
 }});
 
-define({id: "32a5c061", mode: "inline", inputs: ["model","cursor","display"], body: async (model,cursor,display) => {
+define({id: "38a445b5", mode: "inline", inputs: ["model","cursor","display"], body: async (model,cursor,display) => {
 display(await(
-new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")
+model.oasis_tickets_per_person(cursor) == Infinity ? "" : new Array(Math.floor(model.oasis_tickets_per_person(cursor)) + 1).join("🎟️")
 ))
 }});
 
 define({id: "25468d34", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
 display(await(
 draggable_input({input:'croke_park_capacity_in', value: 82300, step:100})
-))
-}});
-
-define({id: "cd3647d8", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
-display(await(
-draggable_input({input:'bike_shed_cost_in', value: 336000, step:2000})
-))
-}});
-
-define({id: "753ca96f", mode: "inline", inputs: ["draggable_input","display"], body: async (draggable_input,display) => {
-display(await(
-draggable_input({input:'bikes_per_bike_shed_in', value: 18, step:.1})
 ))
 }});
 
@@ -881,7 +875,7 @@ define({id: "f2a69baf", body: () => {
 </script>
 <div id="observablehq-center">
 <main id="observablehq-main" class="observablehq">
-<div class="observablehq observablehq--block"><!--:6f9c26cc:--></div>
+<div class="observablehq observablehq--block"><!--:b4e9cabb:--></div>
 <!-- I like Framework for the next calculang gallery because reactivity and Markdown for the applications should be nice for contributions  -->
 <!-- But for certain things: such as here, I hack my own reactivity and custom dom changes: see `fns_annotations`. -->
 <!-- and stray a bit from convenient Markdown -->
@@ -1077,11 +1071,11 @@ background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
 <div class="observablehq observablehq--block"><!--:9bf51115:--></div>
 <div style="padding:10px; background: aliceblue; border: 1px solid black; border-radius: 20px; margin: 10px; max-width: unset" id="main">
 <div class="observablehq observablehq--block"><!--:eb5cdac5:--></div>
-<div class="observablehq observablehq--block"><!--:023a3a57:--></div>
+<div class="observablehq observablehq--block"><!--:22d60405:--></div>
 <style>
 @keyframes fadeIn {
-  0% { opacity: 0.5;background: aqua; }
-  50% { background: aqua; opacity: 1; }
+  0% { opacity: 0.5;background: #39ff14; }
+  50% { background: #39ff14; opacity: 1; }
   80% { } /*dark theme should be black, but minor*/
   100% { opacity: 0.8; background:transparent }
 }
@@ -1098,8 +1092,9 @@ background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
 
 .f {
   font-weight: bold;
+  border: 1px solid lightgrey;
   padding: 4px;
-  border-radius:3px;
+  border-radius:5px;
   /*overflow-wrap: break-word*/
   text-wrap: nowrap;
   }
@@ -1112,7 +1107,8 @@ background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
   padding: 0 0.2em;
   font-style: italic;
   text-wrap: nowrap;
-  color: #0a008b
+  color: #0a008b;
+  cursor: pointer;
 }
 .selected-amount-option {
     border-bottom: 3px dotted orange;
@@ -1124,10 +1120,10 @@ background: linear-gradient(skyblue, #9198e5);    /*border-radius: 4px;*/
 <div class="observablehq observablehq--block"><!--:96ed5b9b:--></div>
 <div class="observablehq observablehq--block"><observablehq-loading></observablehq-loading><!--:9c39fa93:--></div>
 <p><span style="padding:1px;font-style:italic; margin-bottom:1em; /*background: lightgreen*/ font-weight:bold;">But how much is <observablehq-loading></observablehq-loading><!--:de78b9ae:--> ?</span> 🤯</p>
-<p style="line-height:1em">
-<span style="font-size:0.8em">Check my <i><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation" target="_blank" rel="noopener noreferrer">back of the envelope calculations</a></i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:2px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
+<p style="line-height:1em; border: 1px solid lightgrey; padding:3px; background: lightyellow; display:inline-block">
+<span style="font-size:0.8em">Check my <i><a href="https://en.wikipedia.org/wiki/Back-of-the-envelope_calculation" target="_blank" rel="noopener noreferrer">back of the envelope calculations</a></i> and <strong>make them your own</strong> by dragging <span class="input f" style="padding:0px; opacity:0.8; font-style:italic">numbers ↔️</span></span>
 </p>
-<h4 style="font-style:italic;  margin-bottom:1em;"><observablehq-loading></observablehq-loading><!--:ed01b831:--> is...</h4>
+<!--<h4 style="font-style:italic;  margin-bottom:1em;">${fmt('amount',cursor.amount_in)} is...</h4>-->
 <style>
 .input-scrubbable-number {
   text-wrap: nowrap;
@@ -1165,7 +1161,12 @@ p, li, ul {
 <div style="margin-left:7px;">
 <p>In <observablehq-loading></observablehq-loading><!--:62c9a0db:--> <a href="https://www.irishtimes.com/health/2024/02/13/national-childrens-hospital-cost-rises-to-over-2bn-donnelly-confirms/" target="_blank" rel="noopener noreferrer">National Childrens Hospitals</a>❓</p>
 <ul>
-<li><span class="f national_childrens_hospitals"></span> National Childrens Hospitals <observablehq-loading></observablehq-loading><!--:ebd4784e:-->👧🏻</li>
+<li><span class="f national_childrens_hospitals"></span> National Childrens Hospitals <observablehq-loading></observablehq-loading><!--:76dbd951:-->👧🏻</li>
+</ul>
+<p>In <observablehq-loading></observablehq-loading><!--:cd3647d8:--> <a href="https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/" target="_blank" rel="noopener noreferrer">bike sheds</a>❓</p>
+<ul>
+<li><span class="f bike_sheds"></span> bike sheds 🚴<div style="height:0.5em"></div></li>
+<li>Using <observablehq-loading></observablehq-loading><!--:753ca96f:-->x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴</li>
 </ul>
 <p>In <observablehq-loading></observablehq-loading><!--:10a27d9a:--> one-off gifts❓</p>
 <ul>
@@ -1178,13 +1179,8 @@ p, li, ul {
 </ul>
 <p>In <observablehq-loading></observablehq-loading><!--:995d9aab:--> <a href="https://duckduckgo.com/?q=oasis+tickets+croke+park&amp;t=h_&amp;iar=news&amp;ia=news" target="_blank" rel="noopener noreferrer">Oasis tickets</a>❓</p>
 <ul>
-<li><span class="f oasis_tickets_per_person"></span> tickets each for every person in Ireland! 💃<observablehq-loading></observablehq-loading><!--:32a5c061:-->🕺<div style="height:0.5em"></div></li>
+<li><span class="f oasis_tickets_per_person"></span> tickets each for every person in Ireland! 💃<observablehq-loading></observablehq-loading><!--:38a445b5:-->🕺<div style="height:0.5em"></div></li>
 <li>Oasis might need to play <span class="f oasis_gigs"></span> gigs together in <a href="https://crokepark.ie/stadium/about" target="_blank" rel="noopener noreferrer">Croke Park</a> at <observablehq-loading></observablehq-loading><!--:25468d34:--> capacity, to honor this volume of tickets 🎶🧑‍🤝‍🧑🎶</li>
-</ul>
-<p>In <observablehq-loading></observablehq-loading><!--:cd3647d8:--> <a href="https://www.irishtimes.com/life-style/2024/09/06/its-not-even-a-shed-a-summary-of-the-leinster-house-bike-shelter-controversy/" target="_blank" rel="noopener noreferrer">bike sheds</a>❓</p>
-<ul>
-<li><span class="f bike_sheds"></span> bike sheds 🚴<div style="height:0.5em"></div></li>
-<li>Using <observablehq-loading></observablehq-loading><!--:753ca96f:-->x 🚴 per shed, these can store <span class="f bike_shed_bikes"></span> bikes 🚴</li>
 </ul>
 <p>In Special Needs Assistants at a salary of <observablehq-loading></observablehq-loading><!--:d6cd2c3c:--> pa❓</p>
 <ul>
@@ -1195,8 +1191,8 @@ p, li, ul {
 <li><span class="f heat_pump_grants"></span>x <observablehq-loading></observablehq-loading><!--:04448e32:--> heat pump grants 🔥</li>
 </ul>
 </div>
-<h2 style="font-style:italic; margin: 0 0; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</h2>
-<p>But for other context, <observablehq-loading></observablehq-loading><!--:de78b9ae-1:--> is <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> <a href="https://whereyourmoneygoes.gov.ie/en/2023/" target="_blank" rel="noopener noreferrer">total expenditure in 2023</a>, and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. -->.</p>
+<p><span style="font-style:italic; margin: 0 0; margin-bottom:1em;">It's a <u>lot</u> of money! 💰</span></p>
+<p>But <strong>for other context</strong>, <observablehq-loading></observablehq-loading><!--:de78b9ae-1:--> is <span class="f amount_over_total_expenditure_2023"></span> of Ireland's <span class="f total_expenditure_2023"></span> <a href="https://whereyourmoneygoes.gov.ie/en/2023/" target="_blank" rel="noopener noreferrer">total expenditure in 2023</a>, and <span class="f amount_over_national_debt"></span> of Ireland's <span class="f national_debt"></span> national debt. <!-- I want to include this link https://www.ntma.ie/business-areas/funding-and-debt-management/statistics but you need to download or link to the spreadsheet for the National Debt figure I am using and not Gross, so I won't do that in my html. --></p>
 <p>🤷</p>
 </div>
 <style>
