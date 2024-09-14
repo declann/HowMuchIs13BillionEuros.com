@@ -104,11 +104,19 @@ fns_annotations.forEach(d => {
     //if (e.textContent != fmt(d.name, d.v)) { // LOST PRECISION for this comparison.....
     if (e.dataset.v != d.v) { // bad comparison?
       e.classList.remove('introduce')
+      e.classList.remove('introduce-negative')
+      e.classList.remove('introduce-neutral')
       e.focus()
+
+      //if ((d.v - e.dataset.v) < -0.00001) e.classList.add('introduce-negative')
+      const impact = d.v - e.dataset.v
+      if (impact > 0.0000001) e.classList.add('introduce')
+      else if (impact < 0.0000001) e.classList.add('introduce-negative')
+      else e.classList.add('introduce-neutral') // neutral because d. pop impact on gigs
+
       e.textContent = fmt(d.name,d.v)
       e.dataset.v = d.v
       e.value = d.v
-      e.classList.add('introduce')
     }
   })
 });
@@ -172,6 +180,32 @@ function fmt(formula, v) {
 
 .introduce {
   animation: fadeIn ease 2s;
+  animation-fill-mode: forwards;  
+}
+
+
+@keyframes fadeIn-negative {
+  0% { opacity: 0.5;background: pink }
+  50% { background: magenta; opacity: 1; }
+  80% { } /*dark theme should be black, but minor*/
+  100% { opacity: 0.8; background:aliceblue /* not transparent, so borders never overlap */ }
+}
+
+@keyframes fadeIn-neutral {
+  0% { opacity: 0.5;background: aqua }
+  50% { background: aqua; opacity: 1; }
+  80% { } /*dark theme should be black, but minor*/
+  100% { opacity: 0.8; background:aliceblue /* not transparent, so borders never overlap */ }
+}
+
+.introduce-negative {
+  animation: fadeIn-negative ease 2s;
+  animation-fill-mode: forwards;  
+}
+
+
+.introduce-neutral {
+  animation: fadeIn-neutral ease 2s;
   animation-fill-mode: forwards;  
 }
 
